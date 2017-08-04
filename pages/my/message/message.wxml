@@ -1,0 +1,16 @@
+<view class='base row'>
+    <view class='h_left '  >
+        <view wx:for="{{list}}">{{item.signDate}}</view>
+    </view>
+     <view class='h_right '>
+
+        <view class='h_bosk row' wx:for="{{list}}" >
+            <view class='bka'>
+                <image src="{{item.kind=='午托'?'http://dantong.oss-cn-shenzhen.aliyuncs.com/tongdong/bg24.png':'http://dantong.oss-cn-shenzhen.aliyuncs.com/tongdong/bg25.png'}}"></image>
+                <text>{{item.kind}}</text>
+            </view>
+            <view>您的孩子已平安{{item.type}}</view>
+        </view>
+
+     </view>
+</view>

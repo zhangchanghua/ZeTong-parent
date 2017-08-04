@@ -1,0 +1,293 @@
+image{
+    display: inlie-block;
+}
+.h_headxy {
+    width:92%;
+    margin:0 auto;
+    z-index: 3;
+    position: relative;
+    overflow: hidden;
+    top: -40rpx;
+   
+}
+.h_headxy .h_sk{
+    width:160rpx;
+    height:160rpx;
+    border-radius:50%;
+    
+}
+
+.h_sl{
+    width:70%;
+    margin-top: 50rpx;
+    margin-left: 5%;
+}
+.h_saw{
+    display: block;
+    width:60%;
+}
+.h_saw image{
+    width:21rpx;
+    height:26rpx;
+    margin-right: 15rpx;
+}
+.h_saw text{
+    color:#6f6f6f;
+    font-size: 28rpx;
+}
+.h_names{
+    width:30%;
+    font-size: 36rpx;
+    color:#3c3c3c;
+   margin-right: 5%;
+}
+
+
+
+.h_mlr {
+  color: #3c3c3c;
+}
+
+.h_ij {
+  margin-left: 8%;
+  margin-right: 20rpx;
+}
+
+.h_ksa {
+}
+
+.h_tes {
+  height: 40rpx;
+  line-height: 40rpx;
+ 
+}
+
+.h_ctxt {
+  
+  display: none;
+}
+
+.h_imgh {
+  width: 100%;
+}
+
+.h_imgh image {
+  width: 30rpx;
+  height: 30rpx;
+  margin: 16rpx 5rpx;
+}
+
+.h_cw {
+  /*background: #fff;*/
+ 
+}
+
+.h_totea {
+  margin-top: 50rpx;
+  display: flex;
+  justify-content: flex-end;
+ 
+}
+
+.h_headx {
+  width: 40rpx;
+  height:40rpx;
+  border-radius: 50%;
+}
+
+.h_teaname {
+  display: block;
+  width: 15%;
+  font-size: 28rpx;
+  color: #6f6f6f;
+  line-height: 80rpx;
+  margin-left: 3%;
+  height: 80rpx;
+}
+
+.h_nobms {
+  display: block;
+  width: 100%;
+}
+
+.h_nobm {
+  position: relative;
+  width: 181rpx;
+  height: 194rpx;
+  margin-top: 30%;
+  margin-left: 50%;
+  transform: translateX(-50%);
+ 
+}
+
+.h_nobms view {
+  margin-top: 20rpx;
+  text-align: center;
+  font-size: 36rpx;
+  color: #6f6f6f;
+}
+
+.h_tesq{
+    width:45%;
+}
+.h_score{
+    color:#ec8c28;
+    font-size: 26rpx;
+    margin-top: 17rpx;
+    margin-bottom:10rpx;
+}
+.h_wisk{
+    width:92%;
+  
+}
+.h_lisk{
+    width:22%;
+    color:#3c3c3c;
+    font-size:30rpx;
+    line-height: 28rpx;
+}
+.h_lisd{
+    width:77%;
+    border-left:2rpx solid #ec8c28;
+    position: relative;
+    margin-top: 20rpx;
+   padding-bottom: 20rpx;
+    
+}
+.h_poas{
+    width:10rpx;
+    height:10rpx;
+    border:10rpx solid #ec8c28;
+    border-radius: 50%;
+    position: absolute;
+    top:-15rpx;
+    left: -15rpx;
+    background: #fff;
+}
+.h_skla{
+    float: left;
+   position: relative;
+   top: -20rpx;
+    width:90%;
+    margin-left: 5%;
+}
+.h_skla .h_mes1{
+  font-size:28rpx;
+    color:#6f6f6f;
+    margin-bottom: 20rpx;
+}
+.h_phonecall{
+    width:80rpx;
+    height:80rpx;
+    position: absolute;
+    right:0rpx;
+    top:10rpx;
+}
+.h_bosk{
+    margin-bottom: 20rpx;
+}
+.h_ksl image{
+    width:120rpx;
+    height:120rpx;
+    margin-left: 25rpx;
+}
+.h_ksl view{
+    width:120rpx;
+    margin-left: 25rpx;
+}
+.h_ksl view image{
+    width:100%;
+    height:120rpx;
+    margin-left: 0;
+}
+.h_ksl view text{
+    color:#9c9c9c;
+    font-size:24rpx;
+}
+.h_more{
+    width:60%;
+    border:2rpx solid #7eb229!important;
+    color:#7eb229!important;
+    border-radius: 50rpx;
+    height:80rpx;
+    line-height: 80rpx;
+    font-size: 30rpx;
+    margin-top: 20rpx;
+}
+.h_slo{
+    width:100%;
+    position: relative;
+    overflow: hidden;
+}
+.h_slo text{
+    float:left;
+    padding:10rpx 30rpx;
+    border:2rpx solid #6f6f6f;
+    color:#6f6f6f;
+    font-size: 26rpx;
+    margin-right: 20rpx;
+    border-radius: 30rpx;
+    margin-top: 10rpx;
+    margin-bottom: 20rpx;
+}
+.h_smli{
+    width:60rpx;
+    height:60rpx;
+    border-radius: 50%;
+}
+.h_skau{
+    width:85%;
+    margin-left: 5%;
+    border-bottom: 2rpx solid #e5e5e5;
+    
+}
+.h_ads1{
+    display: block;
+    width:32%;
+    font-size: 30rpx;
+    color: #3c3c3c;
+}
+.h_ads2{
+    font-size: 24rpx;
+    color: #9c9c9c;
+   margin-bottom: 10rpx;
+}
+.h_ads3{
+    font-size: 26rpx;
+    color: #6f6f6f;
+    margin-bottom: 20rpx;
+}
+.h_sls{
+    width:67%;
+    top:-10rpx;
+}
+.h_sloa{
+    width:75%;
+
+}
+.h_sawq{
+    margin-bottom:30rpx;
+}
+.lan{
+  position : fixed;
+  width : 100%;
+  height : 100%;
+  top : 0;
+  left : 0;
+  right : 0;
+  bottom : 0;
+  z-index : 99; 
+  background:rgba(51, 51, 51, 0.25);
+}
+.lan image{
+  position : absolute; 
+  width : 100%;
+  height : 80%; 
+  top : 0;
+  left : 0;
+  right : 0;
+  bottom : 0;
+  margin:auto;
+  border-redius : 15rpx;
+
+}

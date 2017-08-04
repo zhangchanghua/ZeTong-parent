@@ -1,0 +1,88 @@
+/* pages/login/login.wxss */
+page{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    font-family: "微软雅黑";
+}
+.login-wrap{
+    width: 100%;
+    height: 100%;
+    background: url(http://dantong.oss-cn-shenzhen.aliyuncs.com/teacher/login-bg.png) left top no-repeat #ecf2f0;
+    background-size: 100% auto;
+}
+.login-face{
+    display: block;
+    width: 181rpx;
+    height: 181rpx;
+    margin: 132rpx auto;
+    border-radius:50%;
+}
+.login-phone{
+    display: flex;
+    height: 95rpx;
+    line-height: 95rpx;
+    flex-direction: row;
+    align-items: center;
+    width: 701rpx;
+    margin: 30rpx auto 50rpx;
+    border-radius: 10rpx;
+    font-size: 36rpx;
+    color: #333;
+    background-color: #fff;
+}
+.login-phone-input{
+    width: 360rpx;
+}
+.login-icon{
+    margin: 0 26rpx 0 46rpx; 
+    width: 35rpx;
+    height: 35rpx;
+}
+.auth-btn{
+    width: 200rpx;
+    height: 55rpx;
+    line-height: 55rpx;
+    text-align: center;
+    color: #fff;
+    background-color: #7eb229;
+    border-radius: 5rpx;
+    font-size: 28rpx;
+}
+.login-sure{
+    width: 701rpx;
+    margin: 100rpx auto 30rpx;
+    height: 95rpx;
+    line-height: 95rpx;
+    border-radius: 10rpx;
+    background-color: #7eb229;
+    font-size: 36rpx;
+    color: #fff;
+}
+.login-title{
+    display: block;
+    width: 699rpx;
+    height: 23rpx;
+    line-height: 23rpx;
+    margin: 80rpx auto 50rpx;
+    text-align: center;
+    background: url(http://dantong.oss-cn-shenzhen.aliyuncs.com/teacher/login-title-pic.png) no-repeat;
+    background-size: 699rpx 23rpx;
+    font-size: 28rpx;
+    color: #9c9c9c;
+}
+.login-three-box{
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.login-three-box image{
+    display: block;
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 50%;
+}
+.margin50{
+    margin: 0 50rpx;
+}

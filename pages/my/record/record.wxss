@@ -1,0 +1,96 @@
+.h_coms {
+  padding-left: 30rpx;
+  background: #fff;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 20rpx;
+}
+
+.h_li {
+  position: relative;
+  padding: 20rpx 0;
+  padding-right: 30rpx;
+  border-top: 2rpx solid #e5e5e5;
+  overflow: hidden;
+}
+
+.h_heks {
+  height: 100rpx;
+  line-height: 100rpx;
+  position: relative;
+  color: #3c3c3c;
+  font-size: 30rpx;
+}
+
+.h_lai {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+
+.h_heksd {
+  position: relative;
+  color: #3c3c3c;
+  font-size: 30rpx;
+}
+
+.h_laos {
+  color: #6f6f6f;
+  font-size: 28rpx;
+  margin-top: 2rpx;
+  text-align: right;
+}
+
+.h_sanjiao {
+  display: block;
+  width: 12rpx;
+  height: 12rpx;
+  border-top: 2rpx solid #9c9c9c;
+  border-right: 2rpx solid #9c9c9c;
+  margin-top: 16rpx;
+  margin-left: 10rpx;
+  transform: rotate(45deg);
+}
+.h_sanjiaodown {
+  display: block;
+  width: 12rpx;
+  height: 12rpx;
+  border-top: 2rpx solid #9c9c9c;
+  border-right: 2rpx solid #9c9c9c;
+  margin-top: 16rpx;
+  margin-left: 10rpx;
+  transform: rotate(135deg);
+}
+
+.h_born {
+  border: 0 !important;
+}
+
+.h_bmxx {
+  padding-left: 30rpx;
+  color: #7eb229;
+  height: 60rpx;
+  line-height: 40rpx;
+  font-size: 30rpx;
+}
+
+.pick1 {
+  top: 0;
+  line-height: 80rpx;
+  display: block;
+  position: absolute;
+  right:50rpx;
+  z-index: 9;
+  width: 80%;
+  float: right;
+  height: 100%;
+  font-size: 30rpx;
+  color: #3c3c3c;
+  text-align: right;
+}
+.h_sabe{
+    width:90%;
+    background: #7eb229;
+    color:#fff;
+    margin:30rpx auto; 
+}

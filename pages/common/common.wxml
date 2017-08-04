@@ -1,0 +1,116 @@
+<template name="s">test</template>
+<!--食物-->
+<template name="foods">
+  <block wx:for="{{foodkinds}}">
+    <view class='base dates'>
+      <view class='whens'>{{item.day}}</view>
+      <text>(午餐)</text>
+    </view>
+    <view class="section section_gap">
+      <scroll-view class="scroll-view_H" scroll-x="true" style="width: 100%;height: 240rpx;">
+        <block wx:for="{{foodkinds[index].lunch}}" wx:for-index="index_" >
+          <view class="col">
+            <image src="{{item.imgsrc}}" bindtap="images_" id="1_{{index}}_{{index_}}_{{item.foodname}}"  ></image>
+            <text>{{item.foodname}}</text>
+          </view>
+        </block>
+      </scroll-view>
+    </view>
+    <view class='base dates'>
+      <text>(晚餐)</text>
+    </view>
+    <view class="section section_gap">
+      <scroll-view class="scroll-view_H" scroll-x="true" style="width: 100%;height: 240rpx;">
+        <block wx:for="{{foodkinds[index].supper}}">
+          <view class="col">
+            <image src="{{item.imgsrc}}"  bindtap="images_"  id="2_{{index}}_{{index_}}_{{item.foodname}}"  ></image>
+            <text>{{item.foodname}}</text>
+          </view>
+        </block>
+      </scroll-view>
+    </view>
+  </block>
+</template>
+
+<!--表情点赞-->
+<template name="zan">
+  <view class='h_cw'>
+    <block wx:for="{{arrs}}" wx:for-index="allindex" wx:for-item="allitem">
+      <view class='base dates h_ksa'>
+        <view class='whens'>{{allitem.xiguan}}</view>
+      </view>
+      <block wx:for="{{arrs[allindex].bodys}}" wx:for-index="bodyindex" wx:for-item="bodysitem">
+        <view class='row h_tes'>
+          <view class='h_ctxt'>{{bodysitem.text}}</view>
+          <view class='h_imgh'>
+            <block wx:for="{{arrs[allindex].bodys[bodyindex].ads}}" wx:for-item="adsitem" wx:for-index="adsindex">
+              <image data-allindex="{{allindex}}" data-arrind="{{arrs[allindex].bodys[bodyindex].idd}}" bindtap="zans" data-index="{{adsindex}}" src="{{adsitem.src}}"></image>
+            </block>
+          </view>
+        </view>
+      </block>
+    </block>
+  </view>
+</template>
+
+<!--教师评价表情点赞-->
+<template name="teachers">
+  <view class='h_cw teacheid'>
+    <block wx:for="{{teacher}}" wx:for-index="allindex" wx:for-item="allitem">
+      <block wx:for="{{teacher[allindex].bodys}}" wx:for-index="bodyindex" wx:for-item="bodysitem">
+        <view class='row h_tes'>
+          <view class='h_ctxt h_mrsmall'>{{bodysitem.text}}</view>
+          <view class='h_imgh'>
+            <block wx:for="{{teacher[allindex].bodys[bodyindex].ads}}" wx:for-item="adsitem" wx:for-index="adsindex">
+              <image data-allindex="{{allindex}}" data-arrind="{{teacher[allindex].bodys[bodyindex].idd}}" bindtap="zans" data-index="{{adsindex}}" src="{{adsitem.src}}"></image>
+            </block>
+          </view>
+        </view>
+        <view class='h_tipsk'>{{bodysitem.pingyu}}</view>
+      </block>
+    </block>
+  </view>
+</template>
+
+
+<!--日报-->
+<template name="showbiao">
+ <view class='h_cw'>
+    <block wx:for="{{arrs}}" wx:for-index="allindex" wx:for-item="allitem">
+      <view class='base dates h_ksa'>
+        <view class='whens'>{{allitem.xiguan}}</view>
+      </view>
+      <block wx:for="{{arrs[allindex].bodys}}" wx:for-index="bodyindex" wx:for-item="bodysitem">
+        <view class='row h_tes'>
+          <view class='h_ctxt'>{{bodysitem.text}}</view>
+          <view class='h_imgh'>
+            <block wx:for="{{arrs[allindex].bodys[bodyindex].ads}}" wx:for-item="adsitem" wx:for-index="adsindex">
+              <image data-allindex="{{allindex}}" data-arrind="{{arrs[allindex].bodys[bodyindex].idd}}"  src="{{adsitem.src}}"></image>
+            </block>
+          </view>
+        </view>
+      </block>
+    </block>
+  </view>
+</template>
+
+<!--月报报-->
+<template name="showbiao_">
+ <view class='h_cw'>
+    <block wx:for="{{monreport}}" wx:for-index="allindex" wx:for-item="allitem">
+      <view class='base dates h_ksa'>
+        <view class='whens'>{{allitem.xiguan}}</view>
+      </view>
+      <block wx:for="{{monreport[allindex].bodys}}" wx:for-index="bodyindex" wx:for-item="bodysitem">
+        <view class='row h_tes'>
+          <view class='h_ctxt'>{{bodysitem.text}}</view>
+          <view class='h_imgh'>
+            <block wx:for="{{monreport[allindex].bodys[bodyindex].ads}}" wx:for-item="adsitem" wx:for-index="adsindex">
+              <image data-allindex="{{allindex}}" data-arrind="{{monreport[allindex].bodys[bodyindex].idd}}"  src="{{adsitem.src}}"></image>
+            </block>
+          </view>
+        </view>
+      </block>
+    </block>
+  </view>
+</template>

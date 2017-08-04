@@ -1,0 +1,469 @@
+.h_head {
+  height: 86rpx;
+  line-height: 86rpx;
+  padding-bottom: 8rpx;
+  background: #fff;
+}
+
+.h_heads {
+  font-size: 28rpx;
+  width: 25%;
+  text-align: center;
+}
+
+.h_heads text {
+  padding: 10rpx 0;
+}
+
+.h_weeks {
+}
+
+.weekfood {
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: #fff;
+}
+
+.dates {
+  width: 100%;
+  overflow: hidden;
+  height: 94rpx;
+  line-height: 94rpx;
+  text-align: center;
+  font-size: 30rpx;
+}
+
+.whens {
+  color: #7eb229;
+  position: absolute;
+  height: 30rpx;
+  line-height: 30rpx;
+  margin-top: 32rpx;
+  left: 20rpx;
+  border-left: 8rpx solid #7eb229;
+  font-size: 30rpx;
+  padding-left: 10rpx;
+}
+
+.section {
+  position: relative;
+  padding: 0 50rpx;
+  margin-bottom: 20rpx;
+}
+
+.scroll-view_H view {
+  display: inline-block;
+  width: 220rpx;
+  height: 236rpx;
+  margin: 0 20rpx;
+  white-space: nowrap;
+}
+
+.scroll-view_H view image {
+  width: 100%;
+  display: block;
+  height: 160rpx;
+}
+
+.scroll-view_H view text {
+  width: 100%;
+  background: #fff;
+  color: #6f6f6f;
+  display: block;
+  height: 66rpx;
+  line-height: 66rpx;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.section_gap {
+  padding: 0 15px;
+}
+
+.scroll-view_H {
+  white-space: nowrap;
+  font-size: 28rpx;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.h_jsa {
+  width: 96%;
+  padding: 0 2%;
+  height: 94rpx;
+  line-height: 94rpx;
+  font-size: 30rpx;
+}
+
+.h_mid {
+  margin-left: 20rpx;
+  margin-right: 10%;
+}
+
+.h_video {
+  width: 100%;
+  display: block;
+}
+
+video {
+  display: block;
+  width: 100%;
+  height: 800rpx;
+}
+
+.h_play {
+  width: 149rpx;
+  height: 149rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+/*日报*/
+
+.h_mlr {
+  color: #3c3c3c;
+}
+
+.h_ij {
+  margin-right: 20rpx;
+}
+
+.h_ksa {
+  z-index: 3;
+  background: #fff;
+}
+
+.h_tes {
+  height: 80rpx;
+  line-height: 80rpx;
+  margin-bottom: 20rpx;
+}
+
+.h_ctxt {
+  font-size: 28rpx;
+  color: #6f6f6f;
+  margin-left: 20rpx;
+  margin-right: 5%;
+  /*width: 20%;*/
+}
+
+.h_imgh {
+  width: 60%;
+}
+
+.h_imgh image {
+  width: 48rpx;
+  height: 48rpx;
+  margin: 16rpx 10rpx;
+}
+
+.h_cw {
+  background: #fff;
+  padding-bottom: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.h_totea {
+  margin-top: 50rpx;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 30px;
+}
+
+.h_headx {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
+
+.h_teaname {
+  display: block;
+  width: 15%;
+  font-size: 28rpx;
+  color: #6f6f6f;
+  line-height: 80rpx;
+  margin-left: 3%;
+  height: 80rpx;
+}
+
+.h_nobms {
+  display: block;
+  width: 100%;
+}
+
+.h_nobm {
+  position: relative;
+  width: 181rpx;
+  height: 194rpx;
+  margin-top: 30%;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 40rpx;
+}
+
+.h_nobms view {
+  margin-top: 20rpx;
+  text-align: center;
+  font-size: 36rpx;
+  color: #6f6f6f;
+}
+
+/*月报*/
+
+.h_wij {
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+.h_mt {
+  margin-top: 20rpx;
+}
+
+.h_subject {
+  width: 100%;
+  margin-bottom: 20rpx;
+}
+
+.h_ke1 {
+  display: block;
+  width: 100%;
+  color: #3c3c3c;
+  font-size: 28rpx;
+  font-weight: bold;
+  margin: 10rpx 0;
+}
+
+.h_ke2 {
+  display: block;
+  width: 100%;
+  color: #3c3c3c;
+  font-size: 28rpx;
+  margin: 10rpx 0;
+}
+
+.h_ke3 text {
+  display: block;
+  width: 95%;
+  color: #3c3c3c;
+  font-size: 28rpx;
+  margin: 10rpx 0;
+  line-height: 50rpx;
+}
+
+.h_skl {
+  margin-left: 20rpx;
+}
+
+.h_allsay {
+  overflow: hidden;
+  margin-right: 40rpx;
+  margin-bottom: 40rpx;
+  border: 2rpx solid #a0a0a0;
+  min-height: 220rpx;
+  background: #f0fbff;
+  color: #6f6f6f;
+  font-size: 28rpx;
+  padding: 20rpx;
+}
+
+.h_meng {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.5);
+  top: 0;
+  z-index: 99;
+}
+
+.h_menbody {
+  z-index: 100;
+  position: relative;
+  width: 100%;
+  background: #fff;
+  height: 100%;
+  top: 0%;
+  overflow-y: scroll;
+}
+
+.h_clears {
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  right: 20rpx;
+  top: 10rpx;
+}
+
+.h_htip {
+  margin-top: 20rpx;
+  text-align: center;
+  font-size: 36rpx;
+  color: #7eb229;
+}
+
+.h_teames {
+  text-align: center;
+  margin-bottom: 0rpx;
+}
+
+.h_teames image {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  margin: 30rpx auto 10rpx;
+}
+
+.h_teames view {
+  font-size: 28rpx;
+  color: #9c9c9c;
+  margin-bottom: 10rpx;
+}
+
+.h_mrsmall {
+  width: 24%;
+  margin-left: 3%;
+  margin-right: 20rpx;
+}
+
+.teacheid .h_tes {
+  height: 60rpx;
+  line-height: 60rpx;
+  margin-bottom: 0;
+}
+
+.h_imgh wx-image {
+  margin: 6rpx 10rpx;
+}
+
+.h_tipsk {
+  margin: 20rpx 0;
+  margin-left: 3%;
+  color: #9c9c9c;
+  font-size: 24rpx;
+}
+
+.h_ila {
+  width: 90%;
+  position: relative;
+  overflow: hidden;
+  margin: 20rpx auto;
+  padding: 20rpx;
+  background: #f0fbff;
+  border: 2rpx solid #9c9c9c;
+   height: 150rpx;
+}
+
+.h_textarea {
+  position: absolute;
+  width: 95%;
+  left:2%;
+  text-indent: 20rpx; 
+  height: 150rpx;
+  font-size: 28rpx;
+  color: #9c9c9c;
+}
+
+.h_subm {
+  width: 95%;
+  background: #7eb229 !important;
+}
+
+.h_soal {
+  padding-bottom: 0 !important;
+}
+
+.h_soapw {
+  height: 0;
+  transition: all 0.8s linear;
+  -webkit-transition: all 0.8s linear;
+}
+
+.h_heiso {
+  height: 0;
+  transform: translate(0%, -100%);
+  -webkit-transform: translate(0%, -100%);
+}
+
+.h_sol {
+  height: 100%;
+  transform: translate(0%, 0%);
+  -webkit-transform: translate(0%, 0%);
+}
+
+.h_disanj {
+  position: absolute;
+  right: 3%;
+  top: 35rpx;
+  width: 16rpx;
+  height: 16rpx;
+  border-top: 4rpx solid #e5e5e5;
+  border-right: 4rpx solid #e5e5e5;
+  transform: rotate(135deg);
+}
+
+.h_turso {
+  top: 40rpx;
+  transform: rotate(-45deg);
+}
+
+
+.h_jsa button{
+  background: #7eb229;
+  margin-top: 16rpx;
+  margin-right: 40rpx;
+}
+.h_soao{
+  background: #9c9c9c!important;
+}
+.aaa{
+  position:fixed;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
+  background:rgba(204, 204, 204,1);
+}
+
+.h_sola{
+  width:100%;
+  position: absolute;
+  font-size: 30rpx;
+  left:0;
+  color:#000;
+  bottom:0rpx;
+  text-align: center;
+  z-index: 999;
+}
+.h_swol{
+   width:100vw;
+    height:80vw;
+    margin:auto;
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+}
+.slide-image{
+  width:100vw;
+    height:70vw;
+    margin:auto;
+    position:absolute;
+    top:0;
+    left:0;
+    
+}

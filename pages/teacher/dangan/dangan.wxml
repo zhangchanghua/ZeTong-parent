@@ -1,0 +1,167 @@
+<import src="../../../pages/common/common.wxml" />
+<view class='base'>
+    <view>
+        <image class='base' src="{{teacherDetail.BgImg?'https://zetongteacher.zetongedu.com'+teacherDetail.BgImg :'http://dantong.oss-cn-shenzhen.aliyuncs.com/tongdong/bg9.png'}}"></image>
+    </view>
+    <view class='base h_headxy row'>
+        <view class=''>
+            <image class='h_sk' src="{{teacherDetail.headImg}}"></image>
+        </view>
+        <view class='col h_sl'>
+            <view class='h_sas row'>
+                <text class='h_names '>{{teacherDetail.name}}</text>
+                <view class='h_saw '>
+                    <image src="http://dantong.oss-cn-shenzhen.aliyuncs.com/tongdong/bg8.png"></image>
+                    <text>{{teacherDetail.city}}</text>
+                </view>
+            </view>
+             <view class='base row'>
+             <view class='h_tesq'>
+                 <template is="showbiao" data="{{arrs}}" />
+             </view>
+
+                  <text class='h_score'>{{teacherDetail.score}}分</text>
+             </view>
+        </view>
+    </view>
+    <view class='base h_wisk'>
+
+        <view class='base h_bosk'>
+            <view class='h_lisk fl'>联系方式</view>
+            <view class=' h_lisd fl'>
+                <view class='h_poas'></view>
+                <view class='h_skla'>
+                    <view class='h_mes1'>微信：{{teacherDetail.linkWechat}}</view>
+                    <view class='h_mes1'>QQ:{{teacherDetail.linkqq}}</view>
+                    <image bindtap='callphone' id="{{teacherDetail.phone}}" class='h_phonecall' src="http://dantong.oss-cn-shenzhen.aliyuncs.com/tongdong/phone.png"></image>
+                </view>
+            </view>
+        </view>
+
+        <view class='base h_bosk'>
+            <view class='h_lisk fl'>教育经验</view>
+            <view class=' h_lisd fl'>
+                <view class='h_poas'></view>
+                <view class='h_skla'>
+                    <view class='h_mes1' wx:for="{{teacherDetail.education}}" >{{item}}</view>
+                </view>
+            </view>
+        </view>
+
+         <view class='base h_bosk'>
+            <view class='h_lisk fl'>个人介绍</view>
+            <view class=' h_lisd fl'>
+                <view class='h_poas'></view>
+                <view class='h_skla'>
+                    <view class='h_mes1'>{{teacherDetail.introduction}}</view>
+                </view>
+            </view>
+        </view>
+
+         <view class='base h_bosk'>
+            <view class='h_lisk fl'>教学理念</view>
+            <view class=' h_lisd fl'>
+                <view class='h_poas'></view>
+                <view class='h_skla'>
+                    <view class='h_mes1'>{{teacherDetail.idea}}</view>
+                </view>
+            </view>
+        </view>
+
+          <view class='base h_bosk'>
+            <view class='h_lisk fl'>风采展示</view>
+            <view class=' h_lisd fl'>
+                <view class='h_poas'></view>
+                <view class='h_skla'>
+                    <view class='base h_ksl'>                       
+                        <block wx:for="{{teacherImages}}">
+                          <image src="https://zetongteacher.zetongedu.com/uploads/{{item}}" id="{{item}}"  bindtap="yang"></image>
+                        </block>
+                    </view>
+                    <button bindtap="loadMoreImages" id="{{teacherID}}" wx:if="{{fengcai}}" class='h_more' plain="true">查看更多</button>
+                </view>
+            </view>
+        </view>
+
+          <view class='base h_bosk'>
+            <view class='h_lisk fl'>荣誉证书</view>
+            <view class=' h_lisd fl'>
+                <view class='h_poas'></view>
+                <view class='h_skla'>
+                    <view class='base h_ksl row'>                        
+                       <block wx:for="{{teacherCertificate}}">
+                          <image src="https://zetongteacher.zetongedu.com/uploads/{{item}}" id="{{item}}" bindtap="yang" ></image>
+                       </block>
+                    </view>
+                    <button bindtap="loadMoreCertificate" id="{{teacherID}}" wx:if="{{rongyu}}" class='h_more' plain="true">查看更多</button>
+                </view>
+            </view>
+        </view>
+
+          <view class='base h_bosk'>
+            <view class='h_lisk fl'>兴趣爱好</view>
+            <view class=' h_lisd fl'>
+                <view class='h_poas'></view>
+                <view class='h_skla'>
+                    <view class='h_mes1'>{{teacherDetail.hobby}}</view>
+                </view>
+            </view>
+        </view>
+
+          <view class='base h_bosk'>
+            <view class='h_lisk fl'>辅导项目</view>
+            <view class=' h_lisd fl'>
+                <view class='h_poas'></view>
+                <view class='h_skla'>
+                    <view class='h_slo'>
+                        <block wx:for="{{teacherDetail.course}}">
+                        <text>{{item}}</text>
+                        </block>
+
+                    </view>
+                </view>
+            </view>
+        </view>
+
+          <view class='base h_bosk'>
+            <view class='h_lisk fl'>家长评价</view>
+            <view class=' h_lisd fl'>
+                <view class='h_poas'></view>
+                <view class='h_skla'>
+                    <block wx:for="{{assessList}}">
+                    <view class='row h_sawq'>
+                        <image class='h_smli' src="{{item.headImg?item.headImg:'http://dantong.oss-cn-shenzhen.aliyuncs.com/tongdong/bg2.png'}}"></image>
+                        <view class='h_skau'>
+                            <view class='row'>
+                                <text class='h_ads1'>{{item.name}}</text>
+                                  <view class='base row h_sls'>
+                                    <view class='h_tesq h_sloa'>
+                                        <!--<template is="showbiao" data="{{arrs}}" />-->
+                                    </view>
+
+                                    <text class='h_score'>{{item.average}}分</text>
+                                    </view>
+                            </view>
+                            <view class='h_ads2'>{{item.create_time}}</view>
+                            <view class='h_ads3'>{{item.content}}</view>
+                        </view>
+                    </view>
+                     </block>
+
+                </view>
+                 <button bindtap="loadMoreAssess" id="{{teacherID}}" wx:if="{{jiazhang}}" class='h_more' plain="true">查看更多</button>
+            </view>
+        </view>
+
+    </view>
+</view>
+
+<!--弹出-->
+
+<swiper wx:if="{{is_tan}}"  class="lan" bindtap="xiao" style="background:#cccccc" >
+
+    <swiper-item wx:for="{{img}}" >
+      <image src="{{item}}" class="slide-image" width="355" height="150"/>
+    </swiper-item>
+
+</swiper>

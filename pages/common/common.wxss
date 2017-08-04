@@ -1,0 +1,176 @@
+.h_cw {
+  background: #fff;
+  padding-bottom: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.h_totea {
+  margin-top: 50rpx;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 30px;
+}
+
+.h_headx {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
+
+.h_teaname {
+  display: block;
+  width: 15%;
+  font-size: 28rpx;
+  color: #6f6f6f;
+  line-height: 80rpx;
+  margin-left: 3%;
+  height: 80rpx;
+}
+
+.h_nobms {
+  display: block;
+  width: 100%;
+}
+
+.h_nobm {
+  position: relative;
+  width: 181rpx;
+  height: 194rpx;
+  margin-top: 30%;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 40rpx;
+}
+
+.h_nobms view {
+  margin-top: 20rpx;
+  text-align: center;
+  font-size: 36rpx;
+  color: #6f6f6f;
+}
+
+/*月报*/
+
+.h_wij {
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+.h_mt {
+  margin-top: 20rpx;
+}
+
+.h_subject {
+  width: 100%;
+  margin-bottom: 20rpx;
+}
+
+.h_ke1 {
+  display: block;
+  width: 100%;
+  color: #3c3c3c;
+  font-size: 28rpx;
+  font-weight: bold;
+  margin: 10rpx 0;
+}
+
+.h_ke2 {
+  display: block;
+  width: 100%;
+  color: #3c3c3c;
+  font-size: 28rpx;
+  margin: 10rpx 0;
+}
+
+.h_ke3 text {
+  display: block;
+  width: 95%;
+  color: #3c3c3c;
+  font-size: 28rpx;
+  margin: 10rpx 0;
+  line-height: 50rpx;
+}
+
+.h_skl {
+  margin-left: 20rpx;
+}
+
+.h_allsay {
+  overflow: hidden;
+  margin-right: 40rpx;
+  margin-bottom: 40rpx;
+  border: 2rpx solid #a0a0a0;
+  min-height: 220rpx;
+  background: #f0fbff;
+  color: #6f6f6f;
+  font-size: 28rpx;
+  padding: 20rpx;
+}
+
+.h_meng {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.5);
+  top: 0;
+  z-index: 99;
+}
+
+.h_menbody {
+  z-index: 100;
+  position: relative;
+  width: 100%;
+  background: #fff;
+  height: 100%;
+  top: 0%;
+  overflow-y: scroll;
+}
+
+.h_clears {
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  right: 20rpx;
+  top: 10rpx;
+}
+
+.h_htip {
+  margin-top: 20rpx;
+  text-align: center;
+  font-size: 36rpx;
+  color: #7eb229;
+}
+
+.h_teames {
+  text-align: center;
+  margin-bottom: 0rpx;
+}
+
+.h_teames image {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  margin: 30rpx auto 10rpx;
+}
+
+.h_teames view {
+  font-size: 28rpx;
+  color: #9c9c9c;
+  margin-bottom: 10rpx;
+}
+
+.h_mrsmall {
+  width: 15%;
+  margin-left: 8%;
+  margin-right: 20rpx;
+}
+
+.teacheid .h_tes {
+  height: 60rpx;
+  line-height: 60rpx;
+  margin-bottom: 0;
+}
+
+.h_imgh wx-image {
+  margin: 6rpx 10rpx;
+}

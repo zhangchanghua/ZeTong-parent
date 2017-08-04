@@ -1,0 +1,42 @@
+
+
+.h_qw{
+    margin-left: 5%;
+    margin-bottom: 20rpx;
+}
+.h_bols{
+    width:100%;
+    background: #fff;
+}
+.h_clock{
+    width:30rpx;
+    height:30rpx;
+    margin-top: 40rpx;
+}
+.h_yso{
+    margin-left: 5%;
+    padding-top: 15rpx;
+}
+.l9{
+    font-size: 24rpx;
+    color:#9c9c9c;
+    margin-top: 5rpx;
+}
+.h_soqw{
+    width:90%;
+    padding: 0 5%;
+    height:110rpx;
+    background: #fff;
+    border-bottom: 2rpx solid #e5e5e5;
+}
+.h_si{
+    height:110rpx;
+    line-height: 110rpx;
+    font-size: 30rpx;
+    color:#7eb229;
+    margin-left: 8%;
+   
+}
+.bn{
+ border-bottom: 0;
+}

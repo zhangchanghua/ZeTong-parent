@@ -1,0 +1,67 @@
+<view class="base h_wrap">
+
+  <!--search-->
+
+  <view class="h_search">
+    <view bindtap="submitSearch" class='h_vie1'>
+      <image src="http://dantong.oss-cn-shenzhen.aliyuncs.com/tongdong/bg6.png"></image>
+    </view>
+    <view class='h_vie2'>
+      <input bindinput="searchSchool" class='h_inp1' value="{{keyword}}" placeholder="输入门店、学校" />
+      <image src="http://dantong.oss-cn-shenzhen.aliyuncs.com/tongdong/close1.png" bindtap="yang" ></image>
+    </view>
+  </view>
+
+  <view class='base' hidden>
+        <view class='h_history'>历史搜索</view>
+        <view class='base h_hislist'>
+            <text>大冲中心</text>
+             <text>南山外国语学校</text>
+             <text>大冲中心</text>
+             <text>南山外国语学校</text>
+             <text>大冲中心</text>
+             <text>南山外国语学校</text>
+        </view>
+  </view>
+<!--全部区域-->
+    <view class='h_choose row'>
+        <view class='h_mymendi' hidden> 我的门店 </view>
+
+        <view class='h_zis row' >
+            <view class='h_jins'>
+              <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+                  <view class="picker">
+                  {{array[index]}}
+                  </view>
+              </picker>
+            </view>
+            <text class='h_posan'></text>
+        </view>
+
+    </view>
+
+
+  <view class='h_laikw row' wx:for="{{shops}}" >
+    <image bindtap="makc" id="{{item.telephone}}" class='h_markcall' src="http://dantong.oss-cn-shenzhen.aliyuncs.com/tongdong/phone.png"></image>
+    <image  bindtap="to_mendian" id="{{item.id}}" class='h_shool' src="{{item.image}}"></image>
+    <view   class='base h_lal'>
+      <view bindtap="to_mendian" id="{{item.id}}" class='h_ila'>{{item.name}}（{{item.branch_name}}）</view>
+      <view bindtap="to_mendian" class='h_uilk'>
+          <text>{{item.gap}}KM</text>
+      </view>
+       <view bindtap="to_mendian" id="{{item.id}}" class='h_uilk'>
+        <image class='h_pao' src="http://dantong.oss-cn-shenzhen.aliyuncs.com/tongdong/bg15.png"></image>
+        <text class='h_cg'>{{item.capacity}}</text>
+        <text>|</text>
+         <text>{{item.nooning}}(午托)</text>
+          <text>|</text>
+            <text>{{item.night}}(晚托)人</text>
+      </view>
+      <view bindtap="to_mendian" id="{{item.id}}" class='h_uilk'>
+        <image src="http://dantong.oss-cn-shenzhen.aliyuncs.com/tongdong/bg14.png"></image>
+        <text>{{item.city}}{{item.district}}{{item.address}}</text>
+      </view>
+    </view>
+  </view>
+
+</view>  

@@ -1,0 +1,68 @@
+{
+  "pages": [
+    "pages/main/index/index",
+    "pages/main/center/center",
+    "pages/login/login",
+    "pages/my/record/record",
+    "pages/index/baoming/baoming",
+    "pages/my/leave/leave",
+    "pages/my/xufei/xufei",
+    "pages/index/search/search",
+    "pages/index/place/search",
+    "pages/index/mendetail/mendetail",
+    "pages/index/wrimes/wrimes",
+    "pages/index/baomu/baomu",
+    "pages/my/message/message",
+    "pages/index/member/member",
+    "pages/my/order/order",
+    "pages/my/indent/indent",
+    "pages/my/myEvaluate/myEvaluate",
+    "pages/teacher/dangan/dangan",
+    "pages/main/my/my",
+    "pages/index/seacherschool/seacherschool",
+    "pages/index/navigation/navigation",
+    "pages/index/switchcity/switchcity",
+    "pages/index/find/find",
+    "pages/common/common",
+    "pages/main/teacher/teacher"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#7EB229",
+    "navigationBarTitleText": "泽童教育",
+    "navigationBarTextStyle": "#fff"
+  },
+  "tabBar": {
+    "color": "#9c9c9c",
+    "selectedColor": "#7eb229",
+    "backgroundColor": "#fff",
+    "borderStyle": "white",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/main/index/index",
+        "text": "首页",
+        "iconPath": "pages/images/tab1.png",
+        "selectedIconPath": "pages/images/tab1_1.png"
+      },
+      {
+        "pagePath": "pages/main/center/center",
+        "text": "校区",
+        "iconPath": "pages/images/tab2.png",
+        "selectedIconPath": "pages/images/tab2_1.png"
+      },
+      {
+        "pagePath": "pages/main/teacher/teacher",
+        "text": "找老师",
+        "iconPath": "pages/images/tab3.png",
+        "selectedIconPath": "pages/images/tab3_1.png"
+      },
+      {
+        "pagePath": "pages/main/my/my",
+        "text": "我的",
+        "iconPath": "pages/images/tab4.png",
+        "selectedIconPath": "pages/images/tab4_1.png"
+      }
+    ]
+  }
+}

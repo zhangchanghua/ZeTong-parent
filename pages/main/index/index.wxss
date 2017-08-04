@@ -1,0 +1,213 @@
+
+.h_history{
+    height:50rpx;
+    line-height: 50rpx;
+    padding-left: 8%;
+    font-size: 28rpx;
+    color:#7eb229;
+    margin-bottom: 10rpx;
+
+}
+.h_hislist{
+    padding:20rpx 3%;
+    background: #fff;
+}
+.h_hislist text{
+    display: inline-block;
+    height:70rpx;
+    line-height: 70rpx;
+    border:2rpx solid #a0a0a0;
+    padding:0 30rpx;
+    margin:15rpx; 
+    border-radius: 10rpx;
+    color:#6f6f6f;
+    font-size: 30rpx;
+}
+
+.h_choose{
+    width:96%;
+    padding:0 2%;
+    height:100rpx;
+    line-height: 100rpx;
+    
+}
+.h_zis{
+    margin: 0 auto;
+    width:33.33%;
+    text-align: center;
+    font-size:30rpx;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    color:#7eb229;
+}
+.h_posan{
+    width:0; 
+    height:0; 
+    position: relative;
+    margin-top: 0rpx;
+    margin-left: 5%;
+    border-left:15rpx solid transparent;
+    border-right:15rpx solid transparent;
+    border-top:15rpx solid #7eb229;
+}
+.h_posan1{
+    border-top:15rpx solid #7eb229;
+}
+.h_asdzx{
+    position: absolute;
+    width:100%;
+    height:100%;
+    left:0;
+    top:0;
+   z-index: 2;
+}
+
+.h_laikw,.h_laikw1{
+    background: #fff;
+    padding: 20rpx 30rpx;
+    position: relative;
+    overflow: hidden; 
+    border-bottom: 2rpx solid #e5e5e5;
+}
+.h_laikw view text{
+    color:#6f6f6f;
+    font-size: 26rpx;
+    margin: 10rpx 0;
+    margin-right: 10rpx;
+}
+
+.h_wutuo{
+    font-size: 30rpx;
+    color: #3c3c3c;
+    margin:20rpx 0;
+}
+.h_xuefei{
+      font-size: 30rpx;
+    color: #6f6f6f;
+    margin-bottom:20rpx;
+}
+.h_oao{
+ height:40rpx;
+    line-height: 40rpx;
+}
+.h_ord5{
+    font-size: 28rpx;
+    color:#3c3c3c;
+    
+}
+.h_ord6{
+    font-size: 30rpx;
+    color:#d92b2b;
+   
+   
+}
+.h_shool{
+    width:160rpx;
+    height:160rpx;
+}
+.h_lal{
+    width:70%;
+}
+.h_ila{
+    color:#3c3c3c;
+    font-size: 30rpx;
+}
+.h_uilk{
+    height:35rpx;
+    margin-bottom: 10rpx;
+    line-height: 35rpx;
+    
+}
+.h_uilk image{
+    width:20rpx;
+    height:24rpx;
+    margin-right: 20rpx;
+}
+.h_uilk text{
+    color:#9c9c9c;
+}
+.h_uilk .h_pao{
+     width:22rpx;
+    height:22rpx;
+    margin-right: 20rpx;
+    }
+.h_cg{
+    color: #7eb229!important;
+}
+.h_markcall{
+    position: absolute;
+    right:30rpx;
+    top:75rpx;
+    width:60rpx;
+    height:60rpx;
+    z-index: 99;
+}
+.h_mymendi{
+    width:100%;
+    font-size: 30rpx;
+    color:#7eb229;
+    text-align: center;
+}
+.h_hela{
+    height:100rpx;
+    line-height: 100rpx;
+    background: #7eb229;
+   
+}
+.h_soo{
+    width:25%;
+    text-align: center;
+    font-size: 28rpx;
+    color:#fff;
+}
+.h_lian{
+    display: inline-block;
+    width:16rpx;
+    height:16rpx;
+   position: relative;
+   margin-left: 10rpx;
+   top:-3rpx;
+    border-top:2rpx solid #fff;
+     border-right:2rpx solid #fff;
+     transform:rotate(135deg);
+}
+.h_seacl{
+    width:50%;
+    position: relative;
+    overflow: hidden;
+    background: #fff;
+    border-radius:30rpx;
+    height:60rpx;
+    line-height: 60rpx;
+    margin-top: 20rpx;
+}
+.h_suakl{
+    width:88%;
+    color:#9c9c9c;
+    font-size: 26rpx;
+   height: 100%;
+   line-height: 60rpx;
+   margin-left: 5%;
+}
+.h_soo image{
+    width:23rpx;
+    height:27rpx;
+    margin-right: 10rpx;
+    position: relative;
+    top:3rpx;
+}
+.h_sola image{
+    width:100%;
+ 
+}
+.h_sola swiper{
+    height:400rpx;
+}
+indicator-color{
+    color:red;
+    background: red;
+}
+.h_ui{
+    text-align: center;
+}

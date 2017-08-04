@@ -1,0 +1,102 @@
+<form bindsubmit="formSubmit">
+<view class='base'>
+  <view wx:if="{{signupDetail.length==0}}" class='h_laikw col' >
+    <view class='c3 h_paoius'>请填写报名信息</view>
+    <view class='h_sla'></view>
+  </view>
+  <view wx:else="{{signupDetail.length>0}}" class='h_laikw col'  bindtap="to_boa" >
+   <input type="text" name="parentId" value="{{signupDetail.parentId}}" hidden />
+    <input type="text" name="shopId" value="{{signupDetail.shopId}}" hidden />
+    <input type="text" name="childId" value="{{signupDetail.childId}}" hidden />
+    <view class='row'>
+      <text>家长：{{signupDetail.parentName}}</text>
+      <text>{{signupDetail.parentPhone}}</text>
+    </view>
+    <view class='row'>
+      <text>孩子：{{signupDetail.childName}}</text>
+      <text> 年级：{{gradeList[signupDetail.childGrade-1]}}</text>
+    </view>
+    <view class='row'>
+    <text>学校：{{signupDetail.theShopName}}</text>
+    </view>
+    <view class='row'>
+      <text>备用电话：{{signupDetail.parentBeiPhone?signupDetail.parentBeiPhone:''}}</text>
+    </view>
+    <view class='h_sla' ></view>
+  </view>
+
+  <view class='h_laikw row'>
+    <image class='h_shool' src="{{signupDetail.image}}"></image>
+    <view class='base h_lal'>
+      <view class='h_ila'>{{signupDetail.theShopName}}（{{signupDetail.theShopBranchName}}）</view>
+      <view class='h_uilk'>
+        <image src="http://dantong.oss-cn-shenzhen.aliyuncs.com/tongdong/bg16.png"></image>
+        <text>{{signupDetail.city}}{{signupDetail.district}}{{signupDetail.address}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view>
+    <view class='row h_pola'>
+      <view class='base h_xuan'>
+      <radio-group name="chooseType"  bindchange="radioChange" >
+
+        <view wx:for="{{sign}}" >         
+          <radio value="{{index}}_{{item.id}}" />
+          <text class='c3'>{{item.name}}</text>
+        </view>
+
+      </radio-group>
+      </view>
+    </view>
+  </view>
+
+  <view class='h_jiao'  wx:if="{{is_xianshi}}">
+    <image class='h_sanjiaos' src='http://dantong.oss-cn-shenzhen.aliyuncs.com/tongdong/sanjiao.png'></image>
+    <view class='base h_heik'>
+    <radio-group name="chooseMonths" bindchange="xiaoChange" >
+      <view class='h_sila'>
+        <!--<image class='h_si' src="http://dantong.oss-cn-shenzhen.aliyuncs.com/tongdong/gou3.png"></image>-->
+        <radio value="4.5_{{jiage.moneyOneTerm}}" />
+        <text>学期缴费{{jiage.moneyOneTerm}}元/学期(月优惠{{jiage.benefitPerMonth}}元/月)</text>
+      </view>
+      <view class='h_sila'>
+        <!--<image class='h_si' src="http://dantong.oss-cn-shenzhen.aliyuncs.com/tongdong/gou4.png"></image>-->
+        <radio value="{{months}}_{{jiage.moneyPerMonth}}" checked />
+        <text>单月缴费{{jiage.moneyPerMonth}}元/月</text>
+        <view class='base h_uiso row'>
+          <text bindtap="less_month">-</text>
+          <text class='h_ao'>{{months}}</text>
+          <!--<input class='h_ao' name="months" value="{{months}}" hidden/>-->
+          <text bindtap="more_month">+</text>
+        </view>
+      </view>
+    </radio-group>
+      
+    </view>
+  </view>
+  <view class='h_laikw1 col'>
+    <view class='base h_oao'>
+      <view class='h_ord5 fl'>总计</view>
+      <view class='h_ord6 fr'>￥{{count_price}}</view>
+    </view>
+  </view>
+</view>
+<view style='width:100%;height:150rpx;'></view>
+<view class='base fosl btw'>
+  <view class='h_las'>总价：{{count_price}}
+    <input name="count_price" value="{{count_price}}" hidden/>
+  </view>
+  <button formType="submit" class='h_qoa'>立即下单</button>
+</view>
+</form>
+
+<!--弹窗-->
+<view class='h_fix' hidden="{{fals}}">
+  <view class='juz h_tomuch'>
+    <image class='h_clols' bindtap="close" src="http://dantong.oss-cn-shenzhen.aliyuncs.com/tongdong/close.png"></image>
+    <image class='h_soo' src="http://dantong.oss-cn-shenzhen.aliyuncs.com/tongdong/bg17.png"></image>
+    <view class='c3'>亲，午托报名人员已满，排队中，</view>
+    <view class='c3'>我们会尽快回复您的！</view>
+  </view>
+</view>

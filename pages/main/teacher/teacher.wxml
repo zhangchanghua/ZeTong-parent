@@ -1,0 +1,90 @@
+<view class="base h_wrap">
+
+  <!--search-->
+  <view class="h_search">
+
+    <form bindsubmit="search">
+        <view class='h_vie1'>
+            <button formType="submit" style="height:80rpx">
+                <image src="http://dantong.oss-cn-shenzhen.aliyuncs.com/tongdong/bg6.png"   bind></image>
+            </button>
+        </view>
+        <view class='h_vie2'>
+          <input name="keyword" class='h_inp1' placeholder="输入老师名字、学校、门店" />
+            <button form-type="reset">
+              <image src="http://dantong.oss-cn-shenzhen.aliyuncs.com/tongdong/close1.png" bind></image>
+            </button>
+        </view>
+    </form>
+
+  </view>
+  <view class='h_choose row'>
+    <view class='h_zis row'>
+      <view class='h_jins'>
+        <picker bindchange="bindPickerChange" id="{{array}}" value="{{index}}" range="{{array}}">
+            <view class="picker">
+            {{array[index]}}
+            </view>
+        </picker>
+    </view>
+      <text class='h_posan'></text>
+    </view>
+    <view class='h_zis row'>
+         <view class='h_jins'>
+        <picker bindchange="bindPickerChange1" id="{{array1}}" value="{{index1}}" range="{{array1}}">
+            <view class="picker">
+            {{array1[index1]}}
+            </view>
+        </picker>
+    </view>
+        <text class='h_posan'></text>
+    </view>
+    <view class='h_zis row'>
+         <view class='h_jins'>
+        <picker bindchange="bindPickerChange2" value="{{index2}}" range="{{array2}}">
+            <view class="picker">
+            {{array2[index2]}}
+            </view>
+        </picker>
+    </view>
+        <text class='h_posan'></text>
+    </view>
+    </view>
+
+    <!--teachermes-->
+    <view class='base h_tasks'>
+
+        <block wx:for="{{teacherlist}}">
+        <view class="base h_teames row" bindtap='toteacher' id="{{item.id}}" wx:if="{{item.is_zetong || is_zetong}}" >
+            <view class='h_teaphoto'>
+                <image  src="{{item.headImg}}"></image>
+                <image  class='h_dan'  src="../../images/bg20.png" ></image>
+            </view>
+
+             <view class=' h_yua'>
+                <view class='base'>
+                <text class="h_yut1">{{item.name}}</text>
+                <image class='h_yui' src="{{item.sex=='女'?'http://dantong.oss-cn-shenzhen.aliyuncs.com/tongdong/woman.png':'http://dantong.oss-cn-shenzhen.aliyuncs.com/tongdong/man.png'}}"></image>
+                <text class="h_yut2">{{item.city}}</text>
+                <text class="h_yut3">{{item.distance}}km</text>
+                </view>
+                <view class='base'>
+                    <view class='h_yut4'>{{item.shopName.name}}（{{item.shopName.branch_name}}）</view>
+                    <view class='h_yut4'>{{item.education[0]}} （{{item.education[1]}}）</view>
+                    <view class='h_yut4'>
+                        <text class="h_yuw">  辅导项目:</text>  
+                        <view class='h_yuq'>
+                            <text wx:for="{{item.course}}">{{item}}</text>                            
+                        </view>
+                    </view>
+                </view>
+            </view>        
+
+        </view>
+        </block>
+
+    </view>
+</view>
+
+
+

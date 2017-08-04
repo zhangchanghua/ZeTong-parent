@@ -1,0 +1,169 @@
+<import src="../../../pages/common/common.wxml" />
+<view class='base' wx:if="{{!hidede}}">
+  <!--头部导航-->
+  <view class='base row h_head'>
+    <block wx:for="{{nav}}" wx:for-item="datas">
+      <view bindtap="tabtrun" data-id="{{index}}" class='h_heads '>
+        <text class='{{indexs==index?"cg":""}}'>{{datas.text}}</text>
+      </view>
+    </block>
+  </view>
+
+  <!--tab切换-->
+  <view class='base'>
+
+    <!--hidden="{{hides==0?flase:true}}" 用hidden去渲染的情况下-->
+
+    <!--每日日报-->
+    <view wx:if="{{hides==0}}" class='base h_weeks h_mlr'>
+      <view>
+        <view class='row h_jsa'>
+          <text class='h_ij'>{{time1}}</text>
+          <text class='h_mid'>{{kinds}}</text>
+          <text class='h_ij'>学生：{{stuName}}</text>
+        </view>
+      </view>
+
+
+      <template is="showbiao" data="{{arrs}}" />
+      <view class='base row h_totea' bindtap="report" id="{{day_teacher.id}}">
+        <text>教师：</text>
+        <image class='h_headx' src="{{day_teacher.headImg}}"></image>
+        <text class='h_teaname'>{{day_teacher.name}}</text>
+      </view>
+    </view>
+
+    <!--查看菜谱-->
+    <view wx:elif="{{hides==1}}" class='base h_weeks'>
+      <view class='bgg weekfood'>本周营养食谱({{bzyysp}}日)</view>
+      <view>
+        <view class='fen'>
+          <template is="foods" data="{{foodkinds}}" />
+        </view>
+      </view>
+
+    </view>
+
+    <!--查看监控-->
+    <view wx:elif="{{hides==2}}" class='base h_weeks'>
+      <view>
+        <view class='row h_jsa' style="background:#fff;border-top:1px solid #dfdfdf">
+          <scroll-view class="scroll-view_H" scroll-x="true" style="width: 100%；">
+            <block wx:for="{{record}}">
+              <button hover-class="h_soao" id="{{index}}" style="background:{{hui==index?'#9c9c9c':'#7eb229'}}" bindtap="yang" type="primary" size="mini">摄像{{item.name}}</button>
+            </block>
+          </scroll-view>
+        </view>
+        <view class='row h_jsa'>
+          <scroll-view class="scroll-view_H" scroll-x="true" style="width: 100%">
+            <text>开放时间: </text>
+            <block wx:for="{{record}}" wx:if="{{index==xiabiao}}">
+              <text class='h_mid' wx:if="{{item.zhongwu}}">中午{{start?start:item.start_time}}-{{end?end:item.end_time}}</text>
+              <text class='h_mid' wx:if="{{item.xiawu}}">下午{{x_start?x_start:item.start_time2}}-{{x_end?x_end:item.end_time2}}</text>
+            </block>
+          </scroll-view>
+        </view>
+      </view>
+
+      <view wx:if="{{!is_bofang}}" style="text-align:center;font-size:40rpx;color:#cccccc;">监控未到开放时间.....</view>
+
+      <view class='base' wx:if="{{pinjia}}">
+        <video src="{{play_url}}" wx:if="{{is_bofang}}" width="100%" autoplay="autoplay" controls="controls">对不起,您的浏览器不支持HTML5视频播放</video>
+      </view>
+    </view>
+
+    <!--每月月报-->
+    <view wx:elif="{{hides==3}}" class='h_video' class='base h_weeks'>
+      <view>
+        <view class='row h_jsa'>
+          <text class='h_ij h_wij'>{{month1}}</text>
+          <text class='h_ij'>学生：{{stuName}}</text>
+        </view>
+      </view>
+
+      <template is="showbiao_" data="{{monreport}}" />
+
+      <view class='base h_mt h_cw h_soal'>
+        <view class='base dates h_ksa' bindtap="opendetail">
+          <view class='whens'>作业掌握情况</view>
+          <view class='h_disanj {{opendetail==true?"":"h_turso"}}'></view>
+        </view>
+        <view class='base h_skl h_soapw {{opendetail==true?"h_heiso":"h_sol"}}'>
+          <block wx:for="{{subject}}">
+            <view class='h_subject col'>
+              <view class='h_ke1'>{{item.kemu}}：</view>
+              <view class='h_ke3'>
+                <text>{{item.content?item.content:'好'}}</text>
+              </view>
+            </view>
+          </block>
+        </view>
+      </view>
+
+      <view class='base h_mt h_cw' wx:if="{{byzs}}">
+        <view class='base dates h_ksa'>
+          <view class='whens'>本月综述</view>
+        </view>
+        <view class='base h_skl'>
+          <view class='h_allsay'>{{byzs}}</view>
+        </view>
+      </view>
+
+
+      <view class='base row h_totea' bindtap="report" id="{{mon_teacher.id}}">
+        <text>教师：</text>
+        <image class='h_headx' src="{{mon_teacher.headImg}}"></image>
+        <text class='h_teaname'>{{mon_teacher.name}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+
+<!--还没报名-->
+<view class='base h_hie' wx:if="{{hidede}}">
+  <view class='base h_nobms '>
+    <image class='h_nobm ' src="http://dantong.oss-cn-shenzhen.aliyuncs.com/tongdong/bg3.png"></image>
+    <view>
+      亲~您还没有报名哦
+    </view>
+    <view> 赶快去报名吧</view>
+  </view>
+</view>
+
+<!--评价老师-->
+<form bindsubmit="formBindsubmit" wx:if="{{!pinjia}}">
+  <view class='base h_meng'>
+    <view class='base h_menbody'>
+      <image class='h_clears' bindtap="closem" src="http://dantong.oss-cn-shenzhen.aliyuncs.com/tongdong/close.png"></image>
+      <view class='h_htip'>
+        亲，请对老师进行评价哦
+      </view>
+      <view class='col h_teames'>
+        <image src="{{mon_teacher.headImg}}"></image>
+        <view>{{mon_teacher.name}}</view>
+        <view>{{month1}}</view>
+      </view>
+      <template is="teachers" data="{{teacher}}" />
+      <view class="base h_ila" wx:if="{{false}}">
+        <textarea class="h_textarea" name="content" placeholder="请对老师评价一下吧，或者向老师提出您的宝贵意见" value="我是评价" maxlength="150" auto-height="true" placeholder-style="color:#9c9c9c;" />
+      </view>
+      <button class="h_subm" type="primary" form-type="submit">提交</button>
+    </view>
+  </view>
+</form>
+
+<!--图片放大-->
+<view class="aaa col" wx:if="{{is_img}}" bindtap="bbbb">
+  <swiper class='h_swol' circular="true">
+    <block wx:for="{{foodmes}}">
+      <swiper-item class='col' current="{{aaa}}">
+        <image src="{{item.imgsrc}}" class="slide-image" />
+        <view class="h_sola">{{item.foodname}}</view>
+      </swiper-item>
+    </block>
+  </swiper>
+
+
+</view>

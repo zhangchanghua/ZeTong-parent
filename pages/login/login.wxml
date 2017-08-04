@@ -1,0 +1,27 @@
+<view class="login-wrap">
+  <image src="{{avatarUrl}}" class="login-face"></image>
+
+  <view class="login-phone">
+    <image src="http://dantong.oss-cn-shenzhen.aliyuncs.com/teacher/login-user-icon.png" class="login-icon"></image>
+    <input type="number" maxlength="11" placeholder="手机号" class="login-phone-input" bindinput="bindKeyInput" maxLength="11" />
+    <button class="auth-btn" bindtap="getAuth">{{authTips}}</button>
+  </view>
+
+  <view class="login-phone">
+    <image src="http://dantong.oss-cn-shenzhen.aliyuncs.com/teacher/login-key-icon.png" class="login-icon"></image>
+    <input type="number" maxlength="4" placeholder="填写验证码" maxLength="4" class="login-phone-input" bindinput="bindCodeInput" />
+  </view>
+
+  <button class="login-sure" bindtap="linkToIndex">登录</button>
+
+
+  <view class="login-title">
+    第三方登录
+  </view>
+
+  <view class="login-three-box">
+    <image src="http://dantong.oss-cn-shenzhen.aliyuncs.com/teacher/wx.png" bindtap="register"></image>
+    <!--<image src="http://dantong.oss-cn-shenzhen.aliyuncs.com/teacher/QQ.png" class="margin50"></image>
+        <image src="http://dantong.oss-cn-shenzhen.aliyuncs.com/teacher/wb.png"></image>-->
+  </view>
+</view>

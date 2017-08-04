@@ -1,0 +1,164 @@
+
+.h_kekl{
+    padding:40rpx 30rpx 20rpx;
+}
+.h_ord1{
+    font-size: 30rpx;
+    color:#3c3c3c;
+    margin-bottom: 10rpx;
+}
+.h_ord2{
+    font-size: 30rpx;
+    color:#ed8a2c;
+}
+.h_ord3{
+    font-size: 26rpx;
+    color:#9c9c9c;
+}
+.h_ord4{
+    font-size: 26rpx;
+    color:#7eb229;
+}
+.h_laikw,.h_laikw1{
+    background: #fff;
+    padding: 20rpx 30rpx;
+    position: relative;
+    overflow: hidden; 
+    margin-bottom: 20rpx;
+}
+.h_laikw view text{
+    color:#6f6f6f;
+    font-size: 26rpx;
+    margin: 10rpx 0;
+    margin-right: 10%;
+}
+
+.h_wutuo{
+    font-size: 30rpx;
+    color: #3c3c3c;
+    margin:20rpx 0;
+}
+.h_xuefei{
+      font-size: 30rpx;
+    color: #6f6f6f;
+    margin-bottom:20rpx;
+}
+.h_oao{
+ height:40rpx;
+    line-height: 40rpx;
+}
+.h_ord5{
+    font-size: 28rpx;
+    color:#3c3c3c;
+    
+}
+.h_ord6{
+    font-size: 30rpx;
+    color:#d92b2b;
+   
+   
+}
+.h_shool{
+    width:160rpx;
+    height:160rpx;
+}
+.h_lal{
+    width:70%;
+}
+.h_ila{
+    color:#3c3c3c;
+    font-size: 30rpx;
+     margin: 20rpx 0 10rpx;
+}
+.h_uilk image{
+    width:20rpx;
+    height:24rpx;
+    margin-right: 20rpx;
+}
+.h_uilk text{
+    color:#9c9c9c;
+}
+.fosl{
+    position: fixed;
+    height:80rpx;
+    background: #fff;
+    bottom:0;
+    padding:5px 30rpx;
+    
+}
+.h_aloq{
+    width:30%;
+    font-size: 28rpx;
+    color: #3c3c3c;
+    padding-top:5rpx;
+}
+.h_aloq view{
+    margin-top: 5rpx;
+}
+.h_ls view{
+    width:220rpx;
+    height:80rpx;
+    margin-right: 20rpx;
+    text-align: center;
+    margin-top: 10rpx;
+    line-height: 80rpx;
+    color:#fff;
+    font-size: 30rpx;
+    border-radius: 10rpx;
+}
+.h_dq{
+    background: #b6b6b6;
+}
+.h_pay{
+   background: #d92b2b;  
+}
+
+.h_sla{
+    width:18rpx;
+    height: 18rpx;
+    position: absolute;
+    right:40rpx;
+    top:50%;
+    border-top:2rpx solid #3c3c3c;
+    border-right:2rpx solid #3c3c3c;
+    transform:rotate(45deg) translateY(-50%);
+}
+.h_uiso{
+    position: relative;
+    top:-10rpx;
+    margin-left: 5%;
+    border:2rpx solid #e5e5e5;
+    overflow: hidden;
+    padding:5rpx 0;
+}
+.h_uiso text{
+    padding:0 20rpx;
+    height:40rpx;
+    line-height: 40rpx;
+    color:#6f6f6f;
+    font-size: 40rpx;
+    display: inline-block;
+}
+.h_uiso  .h_ao{
+     font-size:30rpx;
+    border-left:2rpx solid #e5e5e5;
+     border-right:2rpx solid #e5e5e5;
+}
+.h_las{
+    height:80rpx;
+    line-height: 80rpx;
+    color:#d92b2b;
+    font-size: 30rpx;
+}
+.h_qoa{
+    margin-right: 50rpx;
+    width:30%;
+    text-align: center;
+    height:70rpx;
+    line-height: 70rpx;
+    margin-top: 5rpx;
+    background: #d92b2b;
+    border-radius: 10rpx;
+    color:#fff;
+    font-size: 30rpx;
+}

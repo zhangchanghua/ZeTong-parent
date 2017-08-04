@@ -1,0 +1,123 @@
+
+.h_wsa{
+    background: #fff;
+}
+image{
+    display: block;
+}
+.h_wral{
+    position: relative;
+    overflow: hidden;
+    background-image: url('http://dantong.oss-cn-shenzhen.aliyuncs.com/tongdong/bg18.png');
+    width:100%;
+     padding-bottom:80rpx;
+    background-size:100% auto; 
+    background-repeat: no-repeat;
+}
+.h_touxk{
+    width:120rpx;
+    height:120rpx;
+    background: #fff;
+    border-radius:50%;
+    text-align: center;
+    border: 10rpx solid #b1d772;
+    margin: 0 auto;
+    margin-top: 50rpx;
+
+}
+.h_toux{
+    position: relative;
+    width:110rpx;
+    height:110rpx;
+    margin: 5rpx;
+    border-radius:110rpx
+}
+.h_stanem{
+    text-align: center;
+    font-size: 36rpx;
+    color:#fff;
+    margin-top: 20rpx;
+}
+.h_ilak image{
+    height:40rpx;
+    width:38rpx;
+    margin: 0 auto;
+}
+.h_boskl{
+    width:92%;
+}
+.h_ksla{
+    width:33.33%;
+    position: relative;
+    margin-top:20rpx;
+}
+.h_ilak{
+  
+    position: relative;
+}
+.h_ilak text{
+    /*padding:5rpx 12rpx;*/
+    width:40rpx;
+    height:40rpx;
+    border-radius: 50%;
+    line-height: 40rpx;
+    position: absolute;
+    top:-80%;
+    left:52.5%;
+    background: #E52836;
+    font-size: 20rpx!important;
+    color:#fff!important;
+}
+.h_ksla text{
+    color: #535353;
+    font-size: 26rpx;
+    margin:20rpx 0;
+    text-align: center;
+}
+.h_liust{
+    margin-top: 20rpx;
+}
+.h_liust image{
+    padding:25rpx;
+    width:50rpx;
+    height:50rpx;
+}
+.h_ls{
+  border-top:2rpx solid #e5e5e5; 
+}
+.h_laop{
+    line-height: 100rpx;
+    color: #6f6f6f;
+    font-size: 30rpx;
+    width:87%;
+    border-top:2rpx solid #e5e5e5; 
+}
+.h_jiao{
+    float:right;
+    width:16rpx;
+    height:16rpx;
+    margin-right: 50rpx;
+    border-top:4rpx solid #9c9c9c;
+    border-right:4rpx solid #9c9c9c;
+    transform:rotate(45deg);
+    margin-top: 40rpx;
+}
+.nobor{
+    border:0;
+}
+.h_swi{
+    float: right;
+    margin-right: 20rpx;
+    
+}
+.h_out{
+    width:220rpx;
+    height:70rpx;
+    border-radius: 10rpx;
+    background: #dedede;
+    margin-top: 30rpx;
+    color:#6f6f6f;
+    font-size: 30rpx;
+    text-align: center;
+    line-height: 70rpx;
+}

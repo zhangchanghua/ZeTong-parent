@@ -1,0 +1,44 @@
+<view class='base'>
+  <form bindsubmit="goLeave">
+    <view class="section section_gap">
+      <scroll-view class="h_scol" scroll-x="true"  style="width: 100%;height:95rpx">
+        <block wx:for="{{dates}}">
+          <view data-ide="{{index}}" bindtap='chosto' id="{{item.date}}"  class="col {{indes==index?'curent':''}}">
+            <text>{{item.num}}</text>
+            <text>{{item.is_day==1?'今天':item.week}}</text>            
+          </view>
+        </block>
+      </scroll-view>
+      <view class='h_left'></view>
+       <view class='h_right'></view>
+    </view>
+
+    <view class='h_apso'>
+    <view class='base dates'>
+      <view class='whens'>请假项目</view>
+    </view>
+     <view class='base row'>
+     <block wx:for="{{imgchoose}}">
+        <view class='base h_sa' data-ids='{{index}}' wx:if="{{index==0?wu:wan}}"  bindtap="xuaz">
+            <image src="{{item.imgs}}"></image>
+            <text>{{item.text}}</text>
+        </view>
+     </block>
+    
+     </view>
+    </view>
+
+
+     <view class='h_apso'>
+    <view class='base dates'>
+      <view class='whens'>请假原因</view>
+    </view>
+     <view class='base row h_aqs'>
+       <textarea name="reasons" auto-height maxlength="-1" placeholder="请输入请假原因" class='h_aqsw'/>
+     </view>
+     
+     <button form-type="submit" class='h_submit'>提交</button>
+    </view>
+  </form>
+
+</view>

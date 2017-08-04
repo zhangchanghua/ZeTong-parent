@@ -1,0 +1,96 @@
+<form bindsubmit="formSubmit" >
+<view class='base'>
+    <view class='h_coms'>
+        <view class='h_li h_born'>
+            <text class='h_heks fl'>头像</text>
+            <image class='h_lai fr'bindtap="pimg" src="{{p_img}}"></image>
+        </view>
+        <view class='h_li'>
+            <text class='h_heksd fl'>姓名</text>
+              <view class='fr row'>
+                <!--<text class='h_laos'>{{obj.one.name}}</text>-->
+                <input  class='h_laos' name="p_name" type="text" value="{{obj.one.name}}" />
+                <text class='h_sanjiao'></text>
+              </view>
+        </view>
+
+         <view class='h_li'>
+            <text class='h_heksd fl'>性别</text>
+              <view class='fr row'>
+               <picker class='pick1' bindchange="bindPickerChange" value="{{parentSex}}" range="{{array}}">
+                <view class="picker">
+                  {{array[parentSex]}}
+                </view>
+              </picker>
+                <text class='h_sanjiao'></text>
+              </view>
+        </view>
+          <view class='h_li '>
+            <text class='h_heksd fl'>手机号</text>
+              <view class='fr row'>
+                <input type="number"  class='h_laos' maxlength="11" name="phone"  value="{{obj.one.phone}}" />
+                <text class='h_sanjiao'></text>
+              </view>
+        </view>
+    </view>
+
+
+      <view class='h_coms'>
+        <view class='h_li h_born'>
+            <text class='h_heks fl'>孩子头像</text>
+            <image class='h_lai fr' bindtap="cimg" src="{{c_img}}"></image>
+        </view>
+       
+          <view class='h_li'>
+            <text class='h_heksd fl'>孩子性别</text>
+              <view class='fr row'>
+               <picker class='pick1' bindchange="bindPickerchildChange" value="{{childSex}}" range="{{childarray}}">
+                <view class="picker">
+                  {{childarray[childSex]}}
+                </view>
+              </picker>
+                <text class='h_sanjiao'></text>
+              </view>
+        </view>
+    </view>
+    <view wx:if="{{obj.two}}">
+
+      <view class='h_bmxx btw'  bindtap="sor">
+          <text>报名信息</text>
+          <text style='margin-right:30rpx' class="{{sors==true?'h_sanjiao':'h_sanjiaodown'}}"></text>
+      </view>
+
+      <view class='h_coms'  wx:if="{{sors}}">
+          <view class='h_li h_born'>
+              <text class='h_heksd '>家长姓名：{{obj.two.p_name?obj.two.p_name:'暂未录入'}}</text>
+          </view>
+           
+           <view class='h_li'>
+              <text class='h_heksd '>家长手机号码：{{obj.two.phone}}</text>
+          </view>
+
+          <view class='h_li'>
+              <text class='h_heksd '>孩子姓名：{{obj.two.c_name}}</text>
+          </view>
+          <view class='h_li'>
+              <text class='h_heksd '>年级：{{obj.two.grade == 1?'一':''}}{{obj.two.grade == 2?'二':''}}{{obj.two.grade == 3?'三':''}}{{obj.two.grade == 4?'四':''}}{{obj.two.grade == 5?'五':''}}{{obj.two.grade == 6?'六':''}}年级</text>
+          </view>
+
+          <view class='h_li'>
+              <text class='h_heksd '>学校：{{obj.two.shopName}}</text>
+          </view>
+
+          <view class='h_li'>
+              <text class='h_heksd '>备用电话：{{obj.two.beiyongPhone}}</text>
+          </view>
+
+          <view class='h_li'>
+              <text class='h_heksd '>备用人姓名：{{obj.two.beiyongName}}</text>
+          </view>      
+      </view>
+
+    </view>
+
+    <button form-type="submit" class='h_sabe'>保存</button>
+</view>
+</form>

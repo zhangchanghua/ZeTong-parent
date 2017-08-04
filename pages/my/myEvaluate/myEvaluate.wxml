@@ -1,0 +1,45 @@
+<view class="evaluate-list">
+	<view wx:for="{{data}}"  >
+		<view class="evaluate-item">
+			<view class="item-top">
+				<view class="evaluate-date">{{item.shijian}}</view>
+			</view>
+			<view class="bacf evaluate-face-box">
+				<view class="mar25"><image src="{{item.img?item.img:headimg}}" class="header-pic" /></view>
+				<view>
+					<view>
+						<text class="evaluate-name">{{item.name?item.name:'未设置'}}</text>
+						<block wx:for="{{dataItem.starArr1}}" wx:for-item="url">
+							<image src="{{url}}" class="star-pic" />
+						</block>
+						{{item.fen}}分
+					</view>
+					<view class="evaluate-timer">{{item.create_time}}</view>
+				</view>
+			</view>
+
+			<view>
+                    <view class="section-grade">
+						<text class="mar25">专业程度</text>
+						<image wx:for="{{item.professional}}" src="{{url}}" class="star-pic" />
+					</view>
+
+                    <view class="section-grade">
+						<text class="mar25">敬业程度</text>
+						<image wx:for="{{item.dedication}}" src="{{url}}" class="star-pic" />
+					</view>
+
+                    <view class="section-grade">
+						<text class="mar25">爱心等级</text>
+						<image wx:for="{{item.love}}" src="{{url}}" class="star-pic" />
+					</view>
+			</view>
+
+			<view class="evaluate-txt">{{item.content}}</view>
+
+		</view>
+
+		<view class="evaluate-item" style="margin-top: 8rpx;"></view>
+
+	</view>
+</view>

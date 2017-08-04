@@ -1,0 +1,39 @@
+.h_mt{
+    margin-top: 40rpx;
+}
+.h_namepho view{
+    text-align: center;
+}
+.h_txt1{
+    font-size: 36rpx;
+    color:#3c3c3c;
+    margin: 10rpx  auto;
+}
+.h_txt2{
+    font-size: 28rpx;
+    color:#6f6f6f;
+    margin: 10rpx  auto;
+}
+.h_img1{
+    width:80%;
+    margin:20rpx auto;
+
+}
+.h_sk{
+    width:88%;
+    margin:20rpx auto;
+    height:350rpx;
+    background:#e3f5ff;
+    border-radius: 10rpx;
+    padding:10rpx 20rpx;
+}
+.h_sk view{
+    color:#6f6f6f;
+    font-size:28rpx;
+    text-align: left;
+}
+.h_sk image{
+    width:300rpx;
+    height:200rpx;
+    margin-top:30rpx; 
+}

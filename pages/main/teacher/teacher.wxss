@@ -1,0 +1,144 @@
+
+.h_choose{
+    width:96%;
+    padding:0 2%;
+    height:100rpx;
+    line-height: 100rpx;
+    background: #fff;
+}
+.h_zis{
+    width:33.33%;
+    text-align: center;
+    font-size:30rpx;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+.h_posan{
+    width:0; 
+    height:0; 
+    position: relative;
+    margin-top: 10rpx;
+    margin-left: 5%;
+    border-left:15rpx solid transparent;
+    border-right:15rpx solid transparent;
+    border-top:15rpx solid #9c9c9c;
+}
+.h_posan1{
+    border-top:15rpx solid #7eb229;
+}
+.h_asdzx{
+    position: absolute;
+    width:100%;
+    height:100%;
+    left:0;
+    top:0;
+   z-index: 2;
+}
+/*.h_jins{
+    display: inline;
+}*/
+.h_tasks{
+    position:relative; 
+    background: #fff;
+    overflow: hidden;
+    
+}
+.h_teames{
+    border-top:2rpx solid #e5e5e5;
+    paddding:30rpx 0;
+    position:relative; 
+   
+    overflow: hidden;
+
+
+}
+.h_teaphoto{
+    position: relative;
+    overflow: hidden;
+}
+.h_teaphoto image{
+    margin:20rpx;
+    width:170rpx;
+    height:170rpx;
+}
+.h_teaphoto .h_dan{
+    display: block;
+    position: absolute;
+    right:0;
+    top:0;
+    width:62rpx;
+    height:71rpx;
+}
+.h_yua{
+    width:64%;
+    padding:20rpx 0; 
+   
+    
+}
+.h_yut1{
+    color:#3c3c3c;
+    font-size:30rpx;
+  height:40rpx;
+    line-height: 40rpx;
+   float: left;
+}
+.h_yui{
+    width:26rpx;
+    height:27rpx;
+    float: left;
+    margin-top: 8rpx;
+    margin-left: 20rpx;
+    margin-right:10%; 
+}
+.h_yui1{
+  width:20rpx;
+    height:28rpx;
+    float: left;
+    margin-top: 8rpx;
+    margin-left: 20rpx;
+    margin-right:10%; 
+}
+.h_yut2{
+    color:#9c9c9c;
+    font-size:26rpx;
+      float: left;
+}
+.h_yut3{
+   float:right;
+    color:#9c9c9c;
+    font-size:26rpx;
+}
+.h_yub{
+    width:65%;
+    position: relative;
+    float: left;
+}
+.h_yut4{
+    color:#6f6f6f;
+    font-size: 28rpx;
+    margin: 10rpx 0;
+}
+.h_yuq{
+    display: inline-block;
+    width:70%;
+    position: relative;
+    overflow: hidden;
+  
+}
+.h_yuw{
+    display: block;
+    width:28%;
+    float:left;
+    top:5rpx;
+    position: relative;
+}
+.h_yuq text{
+    float: left;
+    border:1px solid #ec8c28;
+    color:#ec8c28;
+    padding:5rpx 20rpx;
+    border-radius:10rpx;
+    margin-right:10rpx; 
+    margin-bottom:10rpx;
+}

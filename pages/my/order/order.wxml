@@ -1,0 +1,82 @@
+<form bindsubmit="toPay">
+<view class='base'>  
+  <view class=' col h_kekl'>
+    <view class='base'>
+      <view class='h_ord1 fl'>订单编号：{{orderPayDetail.orderId}}</view>
+      <input name="out_trade_no" value="{{orderPayDetail.orderId}}" hidden />
+      <view class='h_ord2 fr' wx:if="{{orderPayDetail.payState==0}}">待付款</view>
+
+      <view class='h_ord4 fr' wx:elif="{{orderPayDetail.payState==2}}">已完成</view>
+    </view>
+    <view class='h_ord3'>（下单时间：{{orderPayDetail.orderTime}}）</view>
+    <input name="time_start" value="{{orderPayDetail.orderTime}}" hidden />
+  </view>
+  <view class='h_laikw col'>
+    <view class='row'>
+      <text>家长：{{orderPayDetail.parentName}}</text>
+      <text>{{orderPayDetail.parentPhone}}</text>
+    </view>
+    <view class='row'>
+      <text>孩子：{{orderPayDetail.childName}}</text>
+      <text> 年级：{{orderPayDetail.childGrade==1?'一':''}}{{orderPayDetail.childGrade==2?'二':''}}{{orderPayDetail.childGrade==3?'三':''}}{{orderPayDetail.childGrade==4?'四':''}}{{orderPayDetail.childGrade == 5?'五':''}}{{orderPayDetail.childGrade == 6?'六':''}}年级
+      </text>
+    </view>
+    <view class='row'>
+      <text>学校：{{orderPayDetail.shopName}}</text>
+    </view>
+    <view class='row'>
+      <text>备用电话：{{orderPayDetail.parentBeiPhone}}</text>
+    </view>
+  </view>
+  <view class='h_laikw1 col'>
+    <view class='row' wx:if="{{orderPayDetail.type==0}}">
+      <text class='h_wutuo'>午托（含餐）</text>
+    </view>
+    <view class='row' wx:if="{{orderPayDetail.type==1}}">
+      <text class='h_wutuo'>晚辅（含餐）</text>
+    </view>
+    <view class='row' wx:if="{{orderPayDetail.type==2}}">
+      <text class='h_wutuo'>晚辅（不含餐）</text>
+    </view>
+    <view class='row' wx:if="{{orderPayDetail.type==3}}">
+      <text class='h_wutuo'>午托（含餐）+晚辅（不含餐）</text>
+    </view>
+    <view class='row' wx:if="{{orderPayDetail.type==4}}">
+      <text class='h_wutuo'>午托（含餐）+晚辅（含餐）</text>
+    </view>
+    <view class='row' wx:if="{{orderPayDetail.months==10}}">
+      <text class='h_xuefei'>学期缴费14000元/学期</text>
+    </view>
+    <view class='row' wx:if="{{orderPayDetail.months<10}}">
+      <text class='h_xuefei'>缴费{{orderPayDetail.price.moneyPerMonth}}元/月</text>
+    </view>
+  </view>
+  <view class='h_laikw row'>
+    <image class='h_shool' src="{{orderPayDetail.shopImg}}"></image>
+    <view class='base h_lal'>
+      <view class='h_ila'>{{orderPayDetail.theShopName}}（{{orderPayDetail.theShopBranchName}}）</view>
+      <view class='h_uilk'>
+        <image src="http://dantong.oss-cn-shenzhen.aliyuncs.com/tongdong/bg16.png"></image>
+        <text>{{orderPayDetail.city}}{{orderPayDetail.district}}{{orderPayDetail.address}}</text>
+      </view>
+    </view>
+  </view>
+  <view class='h_laikw1 col' >
+    <view class='base h_oao'>
+      <view class='h_ord5 fl'>总计</view>
+      <view class='h_ord6 fr'>￥{{orderPayDetail.count_price}}</view>
+      <input name="total_fee" value="{{orderPayDetail.count_price}}" hidden />
+    </view>
+  </view>
+</view>
+<view class='base fosl row'  wx:if="{{orderPayDetail.payState==0}}">
+  <view class='h_aloq col'>
+    <view>付款剩余时间：</view>
+    <view>23小时50分钟</view>
+  </view>
+  <view class='row h_ls'>
+    <view bindtap="cancelOrder" id="{{orderPayDetail.orderId}}" class='h_dq'>取消订单</view>
+    <button form-type="submit" class='h_pay'>去支付</button>
+  </view>
+</view>
+</form>

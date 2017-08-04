@@ -1,0 +1,34 @@
+<view class="base h_wrap">
+
+  <!--search-->
+  <view class="h_search">
+    <view class='h_vie1'>
+      <image src="http://dantong.oss-cn-shenzhen.aliyuncs.com/tongdong/bg6.png"></image>
+    </view>
+    <view class='h_vie2'>
+      <input class='h_inp1' placeholder="输入门店、学校" />
+      <image src="http://dantong.oss-cn-shenzhen.aliyuncs.com/tongdong/close1.png"></image>
+    </view>
+  </view>
+
+  <view class='h_qw c3'>我的位置：<text class='c9'>广东省深圳市南山区科发路1号</text></view>
+  <view class='base h_bols'>
+        <view class='row h_soqw'>
+            <image class='h_clock' src="http://dantong.oss-cn-shenzhen.aliyuncs.com/tongdong/bg5.png"></image>
+            <view class='h_yso'>
+                <view class='c3'>成都市</view>
+                 <view class='l9'>武侯区</view>
+            </view>
+        </view>
+          <view class='row h_soqw'>
+            <image class='h_clock' src="http://dantong.oss-cn-shenzhen.aliyuncs.com/tongdong/bg5.png"></image>
+            <view class='h_yso'>
+                <view class='c3'>成都市</view>
+                 <view class='l9'>武侯区</view>
+            </view>
+        </view>
+  </view>
+    <view class='row h_soqw bn'>
+         <view class='h_si'>清空历史记录</view>
+    </view>
+</view>

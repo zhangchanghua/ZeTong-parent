@@ -1,0 +1,54 @@
+<view class='base'>
+  
+  <view class='h_laikw col'>
+    <view class='row'>
+      <text>家长：{{list.parents.name}}</text>
+      <text>15959333000</text>
+    </view>
+    <view class='row'>
+      <text>孩子：{{list.childs.name}}</text>
+      <text> 年级：{{list.childs.grade}}</text>
+    </view>
+    <view class='row'>
+      <text>学校：{{list.shops.name}}</text>
+    </view>
+    <view class='row'>
+      <text>备用电话：{{list.parents.beiyongPhone}}</text>
+    </view>
+    <view class='h_sla'></view>
+  </view>
+   <view class='h_laikw row'>
+    <image class='h_shool' src="{{list.shops.image}}"></image>
+    <view class='base h_lal'>
+      <view class='h_ila'>{{list.shops.name}}（{{list.shops.branch_name}}）</view>
+      <view class='h_uilk'>
+        <image src="{{list.shops.image}}"></image>
+        <text>{{list.shops.address}}</text>
+      </view>
+    </view>
+  </view>
+  <view class='h_laikw1 col'>
+    <view class='row'>
+      <text class='h_wutuo'>{{list.orders.type}}</text>
+    </view>
+    <view class='row'>
+      <text class='h_xuefei'>单月续费{{list.orders.danyue}}元/月</text>
+      <view class='h_uiso'>
+        <text bindtap="less_month" >-</text>
+        <text class='h_ao'>{{months}}</text>
+        <text bindtap="more_month" >+</text>
+      </view>
+    </view>
+  </view>
+ 
+  <view class='h_laikw1 col'>
+    <view class='base h_oao'>
+      <view class='h_ord5 fl'>总计</view>
+      <view class='h_ord6 fr'>￥{{count_price}}</view>
+    </view>
+  </view>
+</view>
+<view class='base fosl btw'>
+  <view class='h_las'>总价：{{count_price}}</view>
+  <view class='h_qoa' bindtap="xufei" >立即续费</view>
+</view>

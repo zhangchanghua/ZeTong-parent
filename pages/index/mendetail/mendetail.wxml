@@ -1,0 +1,69 @@
+<view class='base'>
+<!--门店轮播图片-->
+    
+    <swiper indicator-dots circular="true" style="height:280px;">      
+        <swiper-item wx:for="{{storedetail.image_}}" >
+          <image src="{{item}}" class="h_tioal"/>
+        </swiper-item>       
+    </swiper>
+
+
+    <view class='row h_pola'>
+        <view class='h_owla' bindtap="markcall" id="{{storedetail.telephone}}">
+            <image class='juz' src="http://dantong.oss-cn-shenzhen.aliyuncs.com/tongdong/phone.png"></image>
+        </view>
+        <view class='h_pw col'>
+            <view class='h_lka'>
+                <text class='h_cg'>{{storedetail.capacity}}</text>
+                <text>|</text>
+                <text>{{storedetail.noonstudents}}(午托)</text>
+                <text>|</text>
+                <text>{{storedetail.nightstudents}}(晚托)人</text>
+            </view>
+            <view class='c3 h_mat'>{{storedetail.name}}（{{storedetail.branch_name}}）</view>
+   <view class='s9 h_mat'><image  class='h_solaq' src="{{storedetail.image}}"></image> {{storedetail.name}}（{{storedetail.branch_name}}）</view>
+        </view>
+         <view class='h_owla' bindtap="to_map">
+            <image class='juz'  src="http://dantong.oss-cn-shenzhen.aliyuncs.com/tongdong/bg11.png"></image>
+        </view>
+    </view>       
+    
+    <view style='width:100%;height:20rpx;'></view>
+
+    <view class='h_sole btw'>
+        <text class='h_ercode f3' >二维码名片</text>
+        <image class='h_codes' bindtap="showcode" src="http://dantong.oss-cn-shenzhen.aliyuncs.com/tongdong/bg27.png"></image>
+    </view>
+
+    <navigator url="../../index/member/member?id={{storedetail.id}}">
+        <view class='h_sole btw'>
+            <text class='h_ercode f3'>查看成员</text>
+            <text class='h_soa'></text>
+        </view>
+    </navigator>
+
+    <view style='width:100%;height:150rpx;'></view>
+        
+    <view class='h_skf' bindtap="to_baom">
+            <button>{{is_baoming?'我已报名':'我要报名' }}</button>
+    </view>
+
+</view>
+
+<!--弹窗-->
+<view class='h_fix' bindtap="meng" hidden="{{swi}}">
+    <view class='juz h_white'>
+        <view class='row'>
+            <image class='h_poq' src="{{storedetail.image}}"></image>
+            <view class='col h_su'>
+                <text class='c3'>{{storedetail.name}}</text>
+                 <text class='s6'>（{{storedetail.branch_name}}）</text>
+                  <text class='ms6'>{{storedetail.city}}</text>
+            </view>
+        </view>
+        <view class='col'>
+            <image class='h_soe' src="{{storedetail.active_image}}"></image>
+            <text class='c6 h_sil'>扫一扫上面的二维码，立即报名</text>
+        </view>
+    </view>
+</view>

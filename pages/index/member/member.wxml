@@ -1,0 +1,42 @@
+<view class='base col'>
+
+    <view >
+        <view class='h_tal'>负责人</view>
+        <view >
+            <block wx:for="{{memberlist.leads}}">
+            <view class='h_tak row' bindtap='to_tas' id="{{item.id}}" >
+                <image src="{{item.headImg}}"></image>
+                <text>{{item.name}}</text>
+            </view>
+            </block>
+        </view>
+    </view>
+
+      <view>
+        <view class='h_tal'>教师</view>
+        <view>
+            <block wx:for="{{memberlist.teachers}}">
+            <navigator url="../../teacher/dangan/dangan?teacherID={{item.id}}">
+                <view class='h_tak row'>
+                <image src="{{item.headImg}}"></image>
+                <text>{{item.name}}</text>
+            </view>
+            </navigator>
+            </block>
+            
+        </view>
+    </view>
+
+     <!--<view>
+        <view class='h_tal'>保姆</view>
+        <view>
+            <block wx:for="{{memberlist.nurses}}">
+            <view class='h_tak row' bindtap='to_baomu'>
+                <image src="{{item.headImg}}"></image>
+                <text>{{item.name}}</text>
+            </view>
+            </block>
+        </view>
+    </view>-->
+
+</view>

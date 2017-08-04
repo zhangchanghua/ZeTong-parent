@@ -1,0 +1,136 @@
+
+.section {
+  position: relative;
+  padding: 20rpx 7%;
+  margin-bottom: 20rpx;
+  background: #fff;
+
+}
+
+.h_scol view {
+
+    border-radius:50%; 
+  display: inline-block;
+  width: 95rpx;
+  height: 95rpx;
+  white-space: nowrap;
+  
+}
+.curent{
+    background: #7eb229;
+    color:#fff!important;
+}
+.curent text{
+    color:#fff!important;
+}
+.h_scol view text {
+    font-size: 26rpx;
+    margin-top:6rpx;
+  width: 100%;
+  color: #6f6f6f;
+  display: block;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+
+.h_scol {
+  white-space: nowrap;
+  font-size: 28rpx;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+.h_left{
+    position: absolute;
+    width:16rpx;
+    height:16rpx;
+    border-left:2rpx solid #6f6f6f;
+    border-bottom:2rpx solid #6f6f6f;
+    top:52rpx;
+    left:20rpx;
+    transform:rotate(45deg);
+    z-index: 9;
+}
+.h_right{
+    position: absolute;
+    width:16rpx;
+    height:16rpx;
+    border-left:2rpx solid #6f6f6f;
+    border-bottom:2rpx solid #6f6f6f;
+    top:52rpx;
+    right:20rpx;
+    transform:rotate(-135deg);
+      z-index: 9;
+}
+.h_apso{
+    padding:0 30rpx;
+    overflow: hidden;
+    position: relative;
+    background: #fff;
+    margin-top: 20rpx;
+}
+.dates {
+  width: 100%;
+  overflow: hidden;
+  height: 94rpx;
+  line-height: 94rpx;
+  text-align: center;
+  font-size: 30rpx;
+}
+
+.whens {
+  color: #7eb229;
+  position: absolute;
+  height: 30rpx;
+  line-height: 30rpx;
+  margin-top: 32rpx;
+  border-left: 8rpx solid #7eb229;
+  font-size: 30rpx;
+  padding-left: 10rpx;
+}
+.h_sa{
+    width:50%;
+     margin: 0rpx auto 30rpx;
+     text-align: center;
+     display: flex;
+     justify-content: center;
+}
+.h_sa image{
+    width:34rpx;
+    position: relative;
+    height:34rpx;
+    margin-right: 20rpx;
+   top: 5rpx;
+}
+.h_sa text{
+    font-size: 30rpx;
+    color:#3c3c3c;
+   
+}
+.h_aqs{
+    width:94%;
+    background:#f9f9f9;
+    border:2rpx solid #e5e5e5;
+    margin:0 auto;
+    padding:20rpx;
+    margin-bottom:50rpx;
+}
+.h_aqsw{
+    width:100%;
+     min-height: 200rpx;
+     color:#6f6f6f;
+     font-size: 26rpx;
+}
+.h_submit{
+    margin-bottom:50rpx;
+    background: #7eb229;
+    color:#fff;
+    font-size: 36rpx;
+}

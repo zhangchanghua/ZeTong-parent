@@ -1,0 +1,41 @@
+<view class='base' hidden="{{showa}}" wx:for="{{list}}" >
+
+  <view class='h_hcom'>
+    <view class='h_sol'>订单编号：{{item.orderId}}</view>
+    <view wx:if="{{status==0}}" class='h_dali'>
+        <view class='h_io'>待付款</view>
+        <view class='samlj'></view>
+    </view>
+     <view wx:elif="{{status==1}}" class='h_dali'>
+        <view class='h_io'>待续费</view>
+        <view class='samlj'></view>
+    </view>
+    <view wx:elif="{{status==2}}" class='h_dali pass'>
+        <view class='h_io'>已完成</view> 
+        <view class='samlj'></view>
+    </view>
+
+    <view class='h_laikw row' bindtap='to_orderdeta' id="{{item.orderId}}-{{item.shopId}}" >
+      <image class='h_shool' src="{{item.shops.image}}"></image>
+      <view class='base h_lal'>
+        <view class='h_ila'>{{item.shops.name}}（{{item.shops.branch_name}}）</view>
+        <view class='h_uilk'>
+          <image src="http://dantong.oss-cn-shenzhen.aliyuncs.com/tongdong/bg16.png"></image>
+          <text>{{item.shops.city}}{{item.shops.district}}{{item.shops.address}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+    <view wx:if="{{status==0}}" class='h_zhnes row'>
+        <text>需付款：￥{{item.totalMoney}}</text>
+        <view class='h_spay' id="{{item.orderId}}-{{item.shopId}}" bindtap="to_orderdeta" >去支付</view>
+    </view>
+     <view wx:elif="{{status==1}}" class='h_zhnes row'>
+        <text>需付款：￥{{item.totalMoney}}</text>
+        <view class='h_spay' id="{{item.orderId}}-{{item.shopId}}" bindtap="to_orderdeta" >去支付</view>
+    </view>
+
+</view>
+
+<view wx:if="{{list.length==0}}" style="text-align:center;color:#ccc;font-size:15px;margin-top:5%;" >暂无更多数据</view>

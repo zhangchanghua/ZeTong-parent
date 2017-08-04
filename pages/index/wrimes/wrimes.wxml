@@ -1,0 +1,45 @@
+<view class='base col'>
+<form bindsubmit="baomingForm">
+    <input type="text" name="parentId" value="{{signupDetail.parentId}}" hidden />
+    <input type="text" name="shopId" value="{{signupDetail.shopId}}" hidden />
+    <input type="text" name="childId" value="{{signupDetail.childId}}" hidden />
+    
+    <view class='h_com'>
+        <label>家长姓名：</label>
+        <input type="text" name="parentName" value="{{signupDetail.parentName}}"/>
+    </view>
+     <view class='h_com'>
+        <label>家长手机号：</label>
+        <input type="number" name="parentPhone" value="{{signupDetail.parentPhone}}" maxlength="11"/>
+    </view>
+     <view class='h_com'>
+        <label>孩子姓名：</label>
+        <input type="text" name="childName" value="{{signupDetail.childName}}"/>
+    </view>
+
+          <view class='h_com'>
+             <label>年级：</label>
+              <input type="text" name="childGrade" value="{{signupDetail.childGrade?signupDetail.childGrade:index}}" style="display:none" />
+              <picker class="pick" bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+                 <view class="picker">
+                   {{array[index]}}
+                 </view>
+               </picker>
+         </view>
+
+     <view class='h_com'>
+        <label>学校：</label>
+        <label>{{signupDetail.shopName}}</label>
+        <input type="text" name="shopName" value="{{signupDetail.shopName}}" style="display:none" />
+    </view>
+     <view class='h_com'>
+        <label>备用电话：</label>
+        <input type="number" name="parentBeiPhone" value="{{signupDetail.parentBeiPhone}}" maxlength="11"/>
+    </view>
+     <view class='h_com bn'>
+        <label>备用人姓名：</label>
+        <input type="text" name="parentBeiName" value="{{signupDetail.parentBeiName}}"/>
+    </view>
+    <button type='primary' formType="submit" class='base h_btn'>保存</button>
+</form>
+</view>

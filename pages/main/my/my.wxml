@@ -1,0 +1,75 @@
+<view class='base h_wsa'>
+    <view class='base h_wral'>
+         <view class='h_touxk'>
+             <image class='h_toux' src="{{headImg}}"></image>
+        </view>
+        <view class='h_stanem'>{{name}}</view>
+    </view>
+    <view class='base h_boskl row'>
+        <view class='h_ksla col' data-id='0' bindtap='to_order'>
+            <view class='h_ilak'>
+                 <image src="http://dantong.oss-cn-shenzhen.aliyuncs.com/tongdong/bg21.png"></image>
+                 <text wx:if="{{one}}" >{{one}}</text>
+            </view>
+            <text>待付款</text>
+        </view>
+          <view class='h_ksla col' data-id='1' bindtap='to_order'>
+            <view class='h_ilak'>
+                 <image src="http://dantong.oss-cn-shenzhen.aliyuncs.com/tongdong/bg22.png"></image>
+                 <text wx:if="{{two}}" >{{two}}</text>
+            </view>
+            <text>待续费</text>
+        </view>
+          <view class='h_ksla col' data-id='2' bindtap='to_order'>
+            <view class='h_ilak'>
+                 <image src="http://dantong.oss-cn-shenzhen.aliyuncs.com/tongdong/bg23.png"></image>
+                 <text wx:if="{{there}}" >{{there}}</text> 
+            </view>
+            <text>已完成</text>
+        </view>
+    </view>
+    <view class='base h_liust'>
+        <view class='h_lisou h_ls row' bindtap="to_record">
+            <image src="http://dantong.oss-cn-shenzhen.aliyuncs.com/tongdong/icon1.png"></image>
+            <view class='h_laop nobor' >
+                <text class='h_lao'>我的档案</text>
+                <text class='h_jiao'></text>
+            </view>
+        </view>
+
+        <view class='h_lisou row' bindtap="to_myEvaluate">
+            <image src="http://dantong.oss-cn-shenzhen.aliyuncs.com/tongdong/icon2.png"></image>
+            <view class='h_laop' >
+                <text class='h_lao'>我的评价</text>
+                <text class='h_jiao'></text>
+            </view>
+        </view>
+
+        <view class='h_lisou row' bindtap="to_leave">
+            <image src="http://dantong.oss-cn-shenzhen.aliyuncs.com/tongdong/icon3.png"></image>
+            <view class='h_laop'>
+                <text class='h_lao'>我要请假</text>
+                <text class='h_jiao'></text>
+            </view>
+        </view>
+
+        <view class='h_lisou row' bindtap="to_message">
+            <image src="http://dantong.oss-cn-shenzhen.aliyuncs.com/tongdong/icon4.png"></image>
+            <view class='h_laop'>
+                <text class='h_lao'>我的消息</text>
+                <text class='h_jiao'></text>
+            </view>
+        </view>
+
+        <view class='h_lisou row'>
+            <image src="http://dantong.oss-cn-shenzhen.aliyuncs.com/tongdong/icon5.png"></image>
+            <view class='h_laop'>
+                <text class='h_lao'>日报推送</text>
+                <switch class='h_swi' color='#7eb229' checked bindchange="switch1Change"/>
+            </view>
+        </view>
+    </view>
+</view>
+
+<!--退出登录-->
+    <view class='base h_out'>退出登录</view>

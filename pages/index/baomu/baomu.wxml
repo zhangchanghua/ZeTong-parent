@@ -1,0 +1,12 @@
+<view class="base col h_namepho">
+    <image class='headsi h_mt' src="http://dantong.oss-cn-shenzhen.aliyuncs.com/tongdong/bg2.png"></image>
+    <view class='h_txt1'>张桂芳</view>
+    <view class='h_txt2'>150****1221</view>
+    <view class='base'>
+        <!--<image class='h_img1' src="http://dantong.oss-cn-shenzhen.aliyuncs.com/tongdong/bg4.png"></image>-->
+        <view class='h_sk'>
+            <view>健康许可证</view>
+            <image class='h_img2' src="http://dantong.oss-cn-shenzhen.aliyuncs.com/tongdong/bg4.png"></image>
+        </view>
+    </view>
+</view>
