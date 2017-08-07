@@ -10,6 +10,9 @@ Page({
         latitude: '',
         longitude: '',
         showDetail:false,
+        school_icon:'http://dantong.oss-cn-shenzhen.aliyuncs.com/tongdong/bg2.png',
+        location_icon: 'http://dantong.oss-cn-shenzhen.aliyuncs.com/tongdong/bg16.png',
+        nav_icon: 'http://dantong.oss-cn-shenzhen.aliyuncs.com/tongdong/daohang.png',
         placeData: {}
     },
     makertap: function(e) {

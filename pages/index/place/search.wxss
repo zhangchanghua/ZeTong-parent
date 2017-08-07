@@ -45,3 +45,8 @@ page{
     bottom: 20rpx;
     right:40rpx;
 }
+.info{
+  display: flex;
+  flex-direction: column;
+  margin-top: 14rpx;
+}

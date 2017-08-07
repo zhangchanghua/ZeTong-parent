@@ -1,12 +1,11 @@
 <map class="map" id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="14" show-location="true" markers="{{markers}}" bindmarkertap="makertap">
 <cover-view class='h_wia row' wx:if="{{showDetail}}">
-  <image bindtap="to_dea" class='h_ims' src="http://dantong.oss-cn-shenzhen.aliyuncs.com/tongdong/bg2.png"></image>
-  <view class='h_soa'>
-    <view bindtap="to_dea" class='c3'>{{placeData.title}}</view>
-    <view bindtap="to_dea" class='s9'>
-      <image class='h_sioa' src="http://dantong.oss-cn-shenzhen.aliyuncs.com/tongdong/bg16.png"></image> 
-      {{placeData.address}}</view>
-    <image bindtap="to_dao" class='h_opa' src="http://dantong.oss-cn-shenzhen.aliyuncs.com/tongdong/daohang.png"></image>
-  </view>
+  <cover-image bindtap="to_dea" class='h_ims' src="{{school_icon}}"></cover-image>
+  <cover-view class='h_soa'>
+    <cover-view bindtap="to_dea" class='c3'>{{placeData.title}}</cover-view>
+    <cover-view bindtap="to_dea" class='info s9'>
+      <image class='h_sioa' src="{{location_icon}}"></image>{{placeData.address}}</cover-view>
+    <image bindtap="to_dao" class='h_opa' src="{{nav_icon}}"></image>
+  </cover-view>
 </cover-view>
 </map>

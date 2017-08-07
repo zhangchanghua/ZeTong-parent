@@ -1,13 +1,14 @@
 <view class="map_container">
-  <map class="map" id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="14" show-location="true" markers="{{markers}}" bindmarkertap="makertap"></map>
-</view>
+  <map class="map" id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="14" show-location="true" markers="{{markers}}" bindmarkertap="makertap">
   <!--search-->
-  <view class="h_search">
-    <view class='h_vie1'>
+  <cover-view class="h_search">
+    <cover-view class='h_vie1'>
       <image src="http://dantong.oss-cn-shenzhen.aliyuncs.com/tongdong/bg6.png"></image>
-    </view>
-    <view class='h_vie2'>
+    </cover-view>
+    <cover-view class='h_vie2'>
       <input class='h_inp1' bindtap="to_seacrchp" disabled placeholder="输入门店、学校" />
       <image src="http://dantong.oss-cn-shenzhen.aliyuncs.com/tongdong/close1.png"></image>
-    </view>
-  </view>
+    </cover-view>
+  </cover-view>
+</map>
+</view>
