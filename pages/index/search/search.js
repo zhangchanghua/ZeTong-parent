@@ -3,6 +3,7 @@ var nation = require('../../../utils/nation.js');
 var app = getApp(), that;
 var imgsrc = app.imgsrc;
 var wxMarkerData = [];
+var map = null;
 // 百度地图
 Page({
   data: {
@@ -22,6 +23,11 @@ Page({
     var BMap = new bmap.BMapWX({
       ak: '86ebVgiA7ZCqqz5L5QbEBL9BErOE37S2'
     });
+    map = BMap;
+  },
+  onShow: function () {
+    var that = this;
+    console.log(map);
     var fail = function (data) {
       console.log(data)
     };
@@ -37,7 +43,7 @@ Page({
         longitude: wxMarkerData[0].longitude
       });
     }
-    BMap.search({
+    map.search({
       query: '学校',
       fail: fail,
       success: success,
@@ -45,6 +51,7 @@ Page({
       iconTapPath: imgsrc + 'marker_red1.png'
     });
   },
+
   showSearchInfo: function (data, i) {
     var that = this;
     that.setData({
