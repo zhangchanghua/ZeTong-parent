@@ -1,4 +1,5 @@
 //app.js
+var api = require('/utils/api.js');
 App({
 
   imgsrc: 'http://dantong.oss-cn-shenzhen.aliyuncs.com/tongdong/',
@@ -6,7 +7,6 @@ App({
   onLaunch: function () {
 
     var that = this
-
     wx.login({
 
       success: function (res) {
@@ -78,39 +78,27 @@ App({
     var that = this
 
     if (that.globalData.userInfo) {
+      let url = api.Url.main_main;
+      let data = {
+        openid: that.globalData.openid,
+        long: that.globalData.long,
+        lat: that.globalData.lat,
+        userInfo: that.globalData.userInfo
+      };
+      let success=function(ret) {
+        var data = ret.data
+        that.globalData.city = data.city
 
-      wx.request({
-
-        url: 'https://zetongteacher.zetongedu.com/parent/Main/mian',
-
-        data: {
-          openid: that.globalData.openid,
-          long: that.globalData.long,
-          lat: that.globalData.lat,
-          userInfo: that.globalData.userInfo
-        },
-
-        method: 'POST',
-
-        success: function (ret) {
-          var data = ret.data
-          that.globalData.city = data.city
-
-          that.globalData.district = data.district
-          console.error("data.code: " + data.code);
-          if (data.code == 1) {
-
-            wx.switchTab({ url: "/pages/main/index/index", });
-
-          } else {
-            //wx.navigateTo({ url: "/pages/login/login", })
-          }
-
-        },
-
-        fail: function (errMsg) { console.log(errMsg) }
-
-      })
+        that.globalData.district = data.district
+        console.error("data.code: " + data.code);
+        if (data.code == 1) {
+          wx.switchTab({ url: "/pages/main/index/index", });
+        } else {
+          //wx.navigateTo({ url: "/pages/login/login", })
+        }
+      };
+      let fail=function(errMsg) { console.log(errMsg) };
+      api.request(url, data, success, fail);
     }
   },
 

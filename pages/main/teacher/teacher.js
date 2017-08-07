@@ -1,6 +1,6 @@
 
 var app = getApp(), that;
-
+var api = require('../../../utils/api.js');
 var nation=require('../../../utils/nation.js');
 
 var imgsrc=app.imgsrc;

@@ -1,4 +1,5 @@
 var nation = require('../../../utils/nation.js');
+var api = require('../../../utils/api.js');
 
 var app = getApp(), that;
 
@@ -28,7 +29,7 @@ onShow : function(options){
    
   wx.request({
                   
-      url: 'https://zetongteacher.zetongedu.com/parent/Main/shops', //返回门店
+    url: api.Url.main_shops, //返回门店
 
       data: {
           city    : city,  //默认全部城市
@@ -44,7 +45,6 @@ onShow : function(options){
           console.log(ret.data)
           that.setData({ shops : ret.data.shops, city : city, array : ret.data.area, banner : ret.data.banner })
       },
-
       fail : function(errMsg){  console.log(errMsg)      }
 
   })

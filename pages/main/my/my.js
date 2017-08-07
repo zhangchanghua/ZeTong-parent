@@ -1,5 +1,5 @@
 var nation=require('../../../utils/nation.js');
-
+var api = require('../../../utils/api.js');
 var app = getApp(), that;
 
 var imgsrc = app.globalData.userInfo.avatarUrl;
