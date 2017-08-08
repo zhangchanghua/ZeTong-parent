@@ -1,4 +1,4 @@
-var api = require('../../../utils/api.js');
+var Api = require('../../../utils/api.js');
 var app = getApp(), that;
 
 var imgsrc = app.imgsrc;
@@ -204,117 +204,70 @@ Page({
   },
 
   onShow: function (e) {
-
     var that = this
-
-    wx.request({
-
-      url: 'https://zetongteacher.zetongedu.com/parent/main/cao_te_me',
-
-      data: { openid: app.globalData.openid },
-
-      method: 'POST',
-
-      success: function (e) {
-
-
-
-        var data = e.data
-
-        var arrsd = data.arrsd //日报信息
-
-        var alllen = arrsd.length //日报长度 
-
-        var monreport = data.monreport //月报信息
-
-        var monreport_len = monreport.length
-
-        for (var i = 0; i < alllen; i++) { //日报遍历
-
-          var midlen = arrsd[i].bodys.length;
-
-          for (var j = 0; j < midlen; j++) {
-
-            var k = arrsd[i].bodys[j].have;
-
-            var tems = [];
-
-            for (var n = 0; n < 5; n++) {
-
-              if (k - 1 >= n) {
-
-                tems.push({ 'src': imgsrc + "biao2.png" });
-
-              } else {
-
-                tems.push({ 'src': imgsrc + "biao1.png" });
-
-              }
-
+    var url = Api.Url.main_cao_te_me
+    var params={
+      openid: app.globalData.openid
+    }
+    Api.request(url,params,function(data){
+      var arrsd = data.arrsd //日报信息
+      var alllen = arrsd.length //日报长度 
+      var monreport = data.monreport //月报信息
+      var monreport_len = monreport.length
+      for (var i = 0; i < alllen; i++) { //日报遍历
+        var midlen = arrsd[i].bodys.length;
+        for (var j = 0; j < midlen; j++) {
+          var k = arrsd[i].bodys[j].have;
+          var tems = [];
+          for (var n = 0; n < 5; n++) {
+            if (k - 1 >= n) {
+              tems.push({ 'src': imgsrc + "biao2.png" });
+            } else {
+              tems.push({ 'src': imgsrc + "biao1.png" });
             }
-            arrsd[i].bodys[j].ads = tems;
-
           }
-
+          arrsd[i].bodys[j].ads = tems;
         }
-
-        for (var i = 0; i < monreport_len; i++) { //日报遍历
-
-          var midlen = monreport[i].bodys.length;
-
-          for (var j = 0; j < midlen; j++) {
-
-            var k = monreport[i].bodys[j].have;
-
-            var tems = [];
-
-            for (var n = 0; n < 5; n++) {
-
-              if (k - 1 >= n) {
-
-                tems.push({ 'src': imgsrc + "biao2.png" });
-
-              } else {
-
-                tems.push({ 'src': imgsrc + "biao1.png" });
-
-              }
-
+      }
+      for (var i = 0; i < monreport_len; i++) { //日报遍历
+        var midlen = monreport[i].bodys.length;
+        for (var j = 0; j < midlen; j++) {
+          var k = monreport[i].bodys[j].have;
+          var tems = [];
+          for (var n = 0; n < 5; n++) {
+            if (k - 1 >= n) {
+              tems.push({ 'src': imgsrc + "biao2.png" });
+            } else {
+              tems.push({ 'src': imgsrc + "biao1.png" });
             }
-            monreport[i].bodys[j].ads = tems;
-
           }
-
+          monreport[i].bodys[j].ads = tems;
         }
-
-        console.log(data)
-        that.setData({
-          arrs: arrsd,  //日报信息
-          bzyysp: data.bzyysp,   //本周营养食谱
-          time1: data.time1, //日报日期
-          stuName: data.stuName, //日报孩子姓名
-          kinds: data.kinds, //日报套餐类型
-          day_teacher: data.day_teacher, //日报日报老师头像和姓名
-          month1: data.month1, //月报日期
-          monreport: monreport,//月报信息
-          subject: data.sub,//作业掌握情况
-          byzs: data.byzs, //本月综述
-          mon_teacher: data.mon_teacher, //月报教师信息
-          foodkinds: data.tem, //菜品
-          record: data.monitor, //门店监控
-          pinjia: data.pinjia,
-          childId: data.childId,
-          teacherId: data.teacherId,
-          hidede: data.hidede,
-          play_url: data.monitor.length ? data.monitor[0].play_url : '',
-          is_bofang: data.monitor.length ? data.monitor[0].is_bofang : '',
-        })
-
 
       }
-
+      console.log(data)
+      that.setData({
+        arrs: arrsd,  //日报信息
+        bzyysp: data.bzyysp,   //本周营养食谱
+        time1: data.time1, //日报日期
+        stuName: data.stuName, //日报孩子姓名
+        kinds: data.kinds, //日报套餐类型
+        day_teacher: data.day_teacher, //日报日报老师头像和姓名
+        month1: data.month1, //月报日期
+        monreport: monreport,//月报信息
+        subject: data.sub,//作业掌握情况
+        byzs: data.byzs, //本月综述
+        mon_teacher: data.mon_teacher, //月报教师信息
+        foodkinds: data.tem, //菜品
+        record: data.monitor, //门店监控
+        pinjia: data.pinjia,
+        childId: data.childId,
+        teacherId: data.teacherId,
+        hidede: data.hidede,
+        play_url: data.monitor.length ? data.monitor[0].play_url : '',
+        is_bofang: data.monitor.length ? data.monitor[0].is_bofang : '',
+      })
     })
-
   },
 
   play: function (e) {
@@ -405,29 +358,19 @@ Page({
 
     if (!love) { wx.showModal({ title: '提示', content: '请评价爱心等级' }); return false }
 
-    wx.request({
-
-      url: 'https://zetongteacher.zetongedu.com/parent/Main/even',
-
-      data: {
-        professional: professional,
-        dedication: dedication,
-        love: love,
-        content: '',
-        teacherId: that.data.teacherId,
-        childId: that.data.childId,
-      },
-
-      method: 'POST',
-
-      success: function (e) {
-
-        wx.showToast({ title: '评价成功', icon: 'success', duration: 2000 })
-
-        setTimeout(function () { that.setData({ pinjia: true }) }, 2000)
-      }
+    var url = Api.Rul.main_even
+    var params={
+      professional: professional,
+      dedication: dedication,
+      love: love,
+      content: '',
+      teacherId: that.data.teacherId,
+      childId: that.data.childId,
+    }
+    Api.request(url, params, function (data) {
+      wx.showToast({ title: '评价成功', icon: 'success', duration: 2000 })
+      setTimeout(function () { that.setData({ pinjia: true }) }, 2000)
     })
-
   },
 
   yang: function (e) {
@@ -495,7 +438,7 @@ Page({
 
       if( !teacherID ) return false
 
-      wx.navigateTo({        url: '../../teacher/dangan/dangan?teacherID='+teacherID,    })
+      wx.navigateTo({url: '../../teacher/dangan/dangan?teacherID='+teacherID,    })
   }
 
 })

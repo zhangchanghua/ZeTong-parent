@@ -1,65 +1,36 @@
 //app.js
-var api = require('/utils/api.js');
+var Api = require('utils/api.js');
 App({
-
   imgsrc: 'http://dantong.oss-cn-shenzhen.aliyuncs.com/tongdong/',
-
   onLaunch: function () {
-
     var that = this
     wx.login({
-
       success: function (res) {
-
         if (res.code) {
-
           var APPID = 'wxe5b8162c10b70f21'
 
           var SECRET = '06f868bdca4f476215c4a3c6d6e2af37'
-
-          wx.request({
-
-            url: 'https://api.weixin.qq.com/sns/jscode2session?appid=' + APPID + '&secret=' + SECRET + '&js_code=' + res.code + '&grant_type=authorization_code',
-
-            data: {},
-
-            method: 'POST',
-
-            success: function (ret) {
-
-              that.globalData.openid = ret.data.openid;       //获取openid 
-
-              wx.getLocation({
-
-                type: 'wgs84',
-
-                success: function (res) {
-
-                  that.globalData.lat = res.latitude  //获取维度
-
-                  that.globalData.long = res.longitude     //获取经度
-
-                  wx.getUserInfo({ //用户微信信息
-
-                    success: function (rey) {
-
-                      that.globalData.userInfo = rey.userInfo
-                      that.yang()    //调用接口
-                    },
-                    //拒绝共享信息
-                    fail: function () { wx.hideLoading() }
-
-                  })
-                },
-                //拒绝定位
-                fail: function (e) { wx.hideLoading() }
-
-              })
-
-            },
-
-            fail: function (errMsg) { console.log(errMsg) }
-
+          var url = 'https://api.weixin.qq.com/sns/jscode2session?appid=' + APPID + '&secret=' + SECRET + '&js_code=' + res.code + '&grant_type=authorization_code'
+          var params={}
+          Api.request(url,params,function(data){
+            that.globalData.openid = data.openid;       //获取openid 
+            wx.getLocation({
+              type: 'wgs84',
+              success: function (res) {
+                that.globalData.lat = res.latitude  //获取维度
+                that.globalData.long = res.longitude     //获取经度
+                wx.getUserInfo({ //用户微信信息
+                  success: function (rey) {
+                    that.globalData.userInfo = rey.userInfo
+                    that.yang()    //调用接口
+                  },
+                  //拒绝共享信息
+                  fail: function () { wx.hideLoading() }
+                })
+              },
+              //拒绝定位
+              fail: function (e) { wx.hideLoading() }
+            })
           })
         } else {
 
@@ -74,31 +45,24 @@ App({
   },
 
   yang: function () {
-
     var that = this
-
     if (that.globalData.userInfo) {
-      let url = api.Url.main_main;
-      let data = {
+      let url = Api.Url.main_main;
+      let params = {
         openid: that.globalData.openid,
         long: that.globalData.long,
         lat: that.globalData.lat,
         userInfo: that.globalData.userInfo
       };
-      let success=function(ret) {
-        var data = ret.data
+      Api.request(url, params, function (data) {
         that.globalData.city = data.city
-
         that.globalData.district = data.district
-        console.error("data.code: " + data.code);
         if (data.code == 1) {
           wx.switchTab({ url: "/pages/main/index/index", });
         } else {
           //wx.navigateTo({ url: "/pages/login/login", })
         }
-      };
-      let fail=function(errMsg) { console.log(errMsg) };
-      api.request(url, data, success, fail);
+      });
     }
   },
 

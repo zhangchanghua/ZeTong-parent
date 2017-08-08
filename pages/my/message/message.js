@@ -1,26 +1,19 @@
 var app = getApp(), that;
+var Api = require('../../../utils/api.js');
 var imgsrc=app.imgsrc;
 Page({
   data:{
     list : [], //message
   },
   onLoad:function(options){
-
     var that = this
-
     var parentId = options.parentId
-
-    wx.request({
-        url  : 'https://zetongteacher.zetongedu.com/parent/Main/my_message',
-
-        data : { parentId : parentId },
-
-        method : 'POST',
-
-        success : function (e) {
-            console.log(e)
-            that.setData({ list : e.data })
-        }
+    var url = Api.Url.main_my_message
+    var params={
+      parentId: parentId
+    }
+    Api.request(url,params,function(data){
+      that.setData({ list: data })
     })
 
   },

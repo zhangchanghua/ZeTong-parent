@@ -1,3 +1,4 @@
+var Api = require('../../utils/api.js');
 Page({
 
   data:{
@@ -53,31 +54,16 @@ Page({
         return false
 
     }
- 
-    wx.request({
-
-        method:'POST',
-
-        url: 'https://zetongteacher.zetongedu.com/parent/login/isuser',
-
-        data:{
-
-          phoneno      : this.data.inputContent, //手机号码
-          userName     : getApp().globalData.openid, //openid
-          name         : getApp().globalData.userInfo.nickName, //name
-          userinfo     : getApp().globalData.userInfo  
-
-        },
-       
-        success: function(res){
-         
-          wx.hideToast();         
-
-          wx.switchTab({ url: '../main/index/index'    })
-         
-        }
-    })
-      
+    var url = Api.Url.login_isuser
+    var parmas={
+      phoneno: this.data.inputContent, //手机号码
+      userName: getApp().globalData.openid, //openid
+      name: getApp().globalData.userInfo.nickName, //name
+      userinfo: getApp().globalData.userInfo  
+    }
+    Api.request(url,parmas,function(data){
+      wx.switchTab({ url: '../main/index/index' })
+    })   
   },
 
   getAuth:function(){ //发短信
@@ -112,73 +98,28 @@ Page({
         }
 
         if(this.data.clickBol){
-          
-            wx.request({
-
-              url:'https://zetongteacher.zetongedu.com?s=parent/login/sendto',
-
-              method:'POST',
-
-              data:{
-
-                phone_number:that.data.inputContent
-
-              },
-            
-              success: function(res){
-
-                var obj=res.data             
-
-                that.setData({  clickBol: false,  authTips: that.data.timers + "s后重发", code : obj     })
-
-                var t = setInterval(function () {
-
-                        that.data.timers--;
-
-                        if (that.data.timers <= 0) {
-
-                          clearInterval(t);
-
-                          that.setData({
-
-                            clickBol: true,
-
-                            timers: 60,
-
-                            authTips: '重新获取'
-
-                          });
-
-                        } else {
-
-                          that.setData({
-
-                            authTips: that.data.timers + "s后重发"
-
-                          });
-
-                        }
-                      }, 1000);             
-              },
-              fail: function(e) {
-
-                console.log('failed!');
-
-                console.log(e)
-
-              },
-              complete: function(res) {
-
-                if( res == null || res.data == null ) {  
-
-                  console.error( '网络请求失败' );  
-
-                  return;
-
-                }
-                
+          var url = Api.Url.login_sendto
+          var params={
+            phone_number: that.data.inputContent
+          }
+          Api.request(url,params,function(data){
+            that.setData({ clickBol: false, authTips: that.data.timers + "s后重发", code: data })
+            var t = setInterval(function () {
+              that.data.timers--;
+              if (that.data.timers <= 0) {
+                clearInterval(t);
+                that.setData({
+                  clickBol: true,
+                  timers: 60,
+                  authTips: '重新获取'
+                });
+              } else {
+                that.setData({
+                  authTips: that.data.timers + "s后重发"
+                });
               }
-            })
+            }, 1000);             
+          })            
         }
   },
       

@@ -1,5 +1,5 @@
 var city = require('../../../utils/city.js');
-
+var Api = require('../../../utils/api.js');
 var app = getApp(), that;
 
 var imgsrc=app.imgsrc;
@@ -241,31 +241,16 @@ Page({
     wx.switchTab({   url: '../../main/index/index',  });
   },
   yang_input : function (e) {
-
       var that = this
-
       var areaname = e.detail.value
-
       if( !areaname ){ return false }
-
       that.setData({areaname : areaname})
-      wx.request({
-
-          url: 'https://zetongteacher.zetongedu.com?s=parent/Main/ch_city',
-
-          data: {
-
-            areaname : areaname
-
-          },
-
-          method:'POST',
-
-          success: function(res){
-              console.log(res)
-              that.setData({ value : res.data })
-
-          },
+      var url = Api.Url.main_ch_city
+      var params={
+        areaname: areaname
+      }
+      Api.request(rul,params,function(data){
+        that.setData({ value:data })
       })
   },
   xiao : function () {

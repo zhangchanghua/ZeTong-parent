@@ -1,3 +1,4 @@
+var Api = require('../../../utils/api.js');
 var app = getApp(), that;
 var imgsrc=app.imgsrc;
 var navtitle="张桂芳";
