@@ -42,7 +42,9 @@ function request(url, params, success, fail, showLoading) {
     })
   }
   var that = this;
-  console.log('请求: ' + url)
+  console.log('请求URL: ' + url)
+  console.log(params)
+  console.info('****************************************************************************************')
   wx.request({
     url: url,
     data: params,

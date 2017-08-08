@@ -8,11 +8,10 @@ App({
       success: function (res) {
         if (res.code) {
           var APPID = 'wxe5b8162c10b70f21'
-
           var SECRET = '06f868bdca4f476215c4a3c6d6e2af37'
           var url = 'https://api.weixin.qq.com/sns/jscode2session?appid=' + APPID + '&secret=' + SECRET + '&js_code=' + res.code + '&grant_type=authorization_code'
-          var params={}
-          Api.request(url,params,function(data){
+          var params = {}
+          Api.request(url, params, function (data) {
             that.globalData.openid = data.openid;       //获取openid 
             wx.getLocation({
               type: 'wgs84',
