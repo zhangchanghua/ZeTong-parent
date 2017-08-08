@@ -1,3 +1,4 @@
+<!--此页面废弃-->
 <map class="map" id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="14" show-location="true" markers="{{markers}}" bindmarkertap="makertap">
 <cover-view class='h_wia row' wx:if="{{showDetail}}">
   <cover-image bindtap="to_dea" class='h_ims' src="{{school_icon}}"></cover-image>

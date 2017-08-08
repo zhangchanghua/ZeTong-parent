@@ -1,85 +1,84 @@
 <view class="base h_wrap">
-    <view class='base h_hela row'>
-        <view class='h_soo' bindtap="to_findplace">
-            <text>{{city}}</text>
-            <text class='h_lian'></text>
-        </view>
-        <view class='h_seacl' bindtap="to_his">
-         <view  class='h_suakl'> 输入门店、学校</view>
-            <!--<input class='h_suakl' disabled  placeholder="输入门店、学校"/>-->
-        </view>
-         <view class='h_soo' bindtap="to_map">
-         <image src="http://dantong.oss-cn-shenzhen.aliyuncs.com/tongdong/bg13.png"></image>
-            <text>地图</text>
-          
-        </view>
+  <view class='base h_hela row'>
+    <view class='h_soo' bindtap="to_findplace">
+      <text>{{city}}</text>
+      <text class='h_lian'></text>
     </view>
+    <view class='h_seacl' bindtap="to_his">
+      <view class='h_suakl'> 输入门店、学校</view>
+      <!--<input class='h_suakl' disabled  placeholder="输入门店、学校"/>-->
+    </view>
+    <view class='h_soo' bindtap="to_map">
+      <image src="http://dantong.oss-cn-shenzhen.aliyuncs.com/tongdong/bg13.png"></image>
+      <text>地图</text>
 
-    <view class='base h_sola'>
-        <swiper indicator-dots circular="true">
-            <swiper-item wx:for="{{banner}}">
-              <image src="{{item}}" class=""/>
-            </swiper-item>
-            
-        </swiper>
     </view>
+  </view>
+
+  <view class='base h_sola'>
+    <swiper indicator-dots circular="true">
+      <swiper-item wx:for="{{banner}}">
+        <image src="{{item}}" class="" />
+      </swiper-item>
+    </swiper>
+  </view>
 
   <view class='base' hidden="{{true}}">
-        <view class='h_history'>历史搜索</view>
-        <view class='base h_hislist'>
-            <text>大冲中心</text>
-             <text>南山外国语学校</text>
-             <text>大冲中心</text>
-             <text>南山外国语学校</text>
-             <text>大冲中心</text>
-             <text>南山外国语学校</text>
-        </view>
+    <view class='h_history'>历史搜索</view>
+    <view class='base h_hislist'>
+      <text>大冲中心</text>
+      <text>南山外国语学校</text>
+      <text>大冲中心</text>
+      <text>南山外国语学校</text>
+      <text>大冲中心</text>
+      <text>南山外国语学校</text>
+    </view>
   </view>
-<!--全部区域-->
-    <view class='h_choose row'>
-        <view class='h_mymendi' hidden> 我的门店 </view>
+  <!--全部区域-->
+  <view class='h_choose row'>
+    <view class='h_mymendi' hidden> 我的门店 </view>
 
-        <view class='h_zis row' >
-            <view class='h_jins'>
-              <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
-                  <view class="picker">
-                  {{array[index]}}
-                  </view>
-              </picker>
-            </view>
-            <text class='h_posan'></text>
-        </view>
-
+    <view class='h_zis row'>
+      <view class='h_jins'>
+        <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+          <view class="picker">
+            {{array[index]}}
+          </view>
+        </picker>
+      </view>
+      <text class='h_posan'></text>
     </view>
 
+  </view>
 
-  <view class='h_laikw row' wx:for="{{shops}}" id='list_wrap'>
-    <image bindtap="makc" id="{{item.telephone}}" class='h_markcall' src="http://dantong.oss-cn-shenzhen.aliyuncs.com/tongdong/phone.png"></image>
-    <image  bindtap="to_mendian" id="{{item.id}}" class='h_shool' src="{{item.image}}"></image>
-    <view   class='base h_lal'>
-      <view bindtap="to_mendian" id="{{item.id}}" class='h_ila'>{{item.name}}（{{item.branch_name}}）</view>
-      <view bindtap="to_mendian" class='h_uilk'>
-          <text>{{item.gap}}KM</text>
+
+  <view class='h_laikw row' wx:for="{{shops}}" id='{{item.id}}' bindtap="to_mendian">
+    <image catchtap="makc" id="{{item.telephone}}" class='h_markcall' src="http://dantong.oss-cn-shenzhen.aliyuncs.com/tongdong/phone.png"></image>
+    <image class='h_shool' src="{{item.image}}"></image>
+    <view class='base h_lal'>
+      <view class='h_ila'>{{item.name}}（{{item.branch_name}}）</view>
+      <view class='h_uilk'>
+        <text>{{item.gap}}KM</text>
       </view>
-       <view bindtap="to_mendian" id="{{item.id}}" class='h_uilk'>
+      <view class='h_uilk'>
         <image class='h_pao' src="http://dantong.oss-cn-shenzhen.aliyuncs.com/tongdong/bg15.png"></image>
         <text class='h_cg'>{{item.capacity}}</text>
         <text>|</text>
-         <text>{{item.nooning}}(午托)</text>
-          <text>|</text>
-            <text>{{item.night}}(晚托)人</text>
+        <text>{{item.nooning}}(午托)</text>
+        <text>|</text>
+        <text>{{item.night}}(晚托)人</text>
       </view>
-      <view bindtap="to_mendian" id="{{item.id}}" class='h_uilk'>
+      <view class='h_uilk'>
         <image src="http://dantong.oss-cn-shenzhen.aliyuncs.com/tongdong/bg14.png"></image>
         <text>{{item.city}}{{item.district}}{{item.address}}</text>
       </view>
     </view>
   </view>
-  
-  
-  
-   <modal hidden="{{flag}}" bindconfirm='confirm' bindcancel='cancel' class='h_modal' confirm-text="确定" cancel-text="取消">
-   <view class='f3 h_ui'>系统定位到您在深圳，需要切换至深圳吗？</view> 
-   </modal>
+
+
+
+  <modal hidden="{{flag}}" bindconfirm='confirm' bindcancel='cancel' class='h_modal' confirm-text="确定" cancel-text="取消">
+    <view class='f3 h_ui'>系统定位到您在深圳，需要切换至深圳吗？</view>
+  </modal>
 
 </view>

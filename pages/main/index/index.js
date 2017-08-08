@@ -76,7 +76,6 @@ Page({
   },
 
   to_mendian: function (e) {
-    console.log("门店点击: " + e)
     var id = e.currentTarget.id
 
     if (!id) { return false }

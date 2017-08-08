@@ -1,14 +1,22 @@
-<view class="map_container">
-  <map class="map" id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="14" show-location="true" markers="{{markers}}" bindmarkertap="makertap">
+<map class="map" id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="14" show-location="true" markers="{{markers}}" bindmarkertap="makertap">
   <!--search-->
   <cover-view class="h_search">
     <cover-view class='h_vie1'>
-      <image src="http://dantong.oss-cn-shenzhen.aliyuncs.com/tongdong/bg6.png"></image>
+      <cover-image src="../../images/search.png"></cover-image>
     </cover-view>
     <cover-view class='h_vie2'>
       <input class='h_inp1' bindtap="to_seacrchp" disabled placeholder="输入门店、学校" />
-      <image src="http://dantong.oss-cn-shenzhen.aliyuncs.com/tongdong/close1.png"></image>
+      <cover-image src="http://dantong.oss-cn-shenzhen.aliyuncs.com/tongdong/close1.png"></cover-image>
     </cover-view>
   </cover-view>
+<!--show detail-->
+  <cover-view class='h_wia row' wx:if="{{showDetail}}">
+  <cover-image bindtap="to_dea" class='h_ims' src="../../images/logo.png"></cover-image>
+  <cover-view class='h_soa'>
+    <cover-view bindtap="to_dea" class='c3'>{{placeData.title}}</cover-view>
+    <cover-view bindtap="to_dea" class='info s9'>
+      <cover-image class='h_sioa' src="{{location_icon}}"></cover-image>{{placeData.address}}</cover-view>
+    <cover-image bindtap="to_dao" class='h_opa' src="../../images/nav.png"></cover-image>
+  </cover-view>
+</cover-view>
 </map>
-</view>

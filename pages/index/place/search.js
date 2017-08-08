@@ -55,6 +55,7 @@ Page({
     showSearchInfo: function(data, i) {
         var that = this;
         that.setData({
+          
             placeData: {
                 title: '名称：' + data[i].title + '\n',
                 address: '地址：' + data[i].address + '\n',

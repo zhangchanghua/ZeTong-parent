@@ -7,10 +7,15 @@ var map = null;
 // 百度地图
 Page({
   data: {
+    showDetail:false,
+    school_icon: 'http://dantong.oss-cn-shenzhen.aliyuncs.com/tongdong/bg2.png',
+    location_icon: 'http://dantong.oss-cn-shenzhen.aliyuncs.com/tongdong/bg16.png',
+    nav_icon: 'http://dantong.oss-cn-shenzhen.aliyuncs.com/tongdong/daohang.png',
     markers: [],
     latitude: '',
     longitude: '',
-    placeData: {}
+    placeData: {},
+    showDetail:false
   },
   makertap: function (e) {
     var that = this;
@@ -34,13 +39,14 @@ Page({
     var success = function (data) {
       wxMarkerData = data.wxMarkerData;
       that.setData({
-        markers: wxMarkerData
-      });
-      that.setData({
-        latitude: wxMarkerData[0].latitude
-      });
-      that.setData({
-        longitude: wxMarkerData[0].longitude
+        markers: wxMarkerData,
+        latitude: wxMarkerData[0].latitude,
+        longitude: wxMarkerData[0].longitude,
+        placeData: {
+          title: '名称：' + wxMarkerData[0].title + '\n',
+          address: '地址：' + wxMarkerData[0].address + '\n',
+          telephone: '电话：' + wxMarkerData[0].telephone
+        }        
       });
     }
     map.search({
@@ -55,6 +61,7 @@ Page({
   showSearchInfo: function (data, i) {
     var that = this;
     that.setData({
+      showDetail: true,
       placeData: {
         title: '名称：' + data[i].title + '\n',
         address: '地址：' + data[i].address + '\n',
@@ -68,7 +75,7 @@ Page({
     for (var i = 0; i < data.length; i++) {
       if (i === id) {
         // 跳转
-        nation.na('../place/search');
+        //nation.na('../place/search');
         // data[i].iconPath = imgsrc+"marker_yellow.png";
       } else {
         // data[i].iconPath = imgsrc+"marker_red.png";
