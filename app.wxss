@@ -70,7 +70,10 @@ page {
 }
 
 /*颜色跟大小*/
-
+.c1 {
+  font-size: 40rpx;
+  color: #3c3c3c;
+}
 .c3 {
   font-size: 30rpx;
   color: #3c3c3c;

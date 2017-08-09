@@ -1,91 +1,59 @@
-var bmap = require('../../../utils/bmap-wx.min.js');
-var nation = require('../../../utils/nation.js');
-var Api = require('../../../utils/api.js');
-var app = getApp(), that;
-var imgsrc = app.imgsrc;
-var wxMarkerData = [];
-// 百度地图
+var amapFile = require('../../../utils/amap-wx.js');
+var app = getApp();
 Page({
   data: {
-    markers: [],
-    latitude: '',
+    polyline: [],
     longitude: '',
-    placeData: {}
+    latitude: '',
+    markers: [{
+      iconPath: "../../images/mapicon_navi_s.png",
+      id: 0,
+      latitude: 39.989643,
+      longitude: 116.481028,
+      width: 23,
+      height: 33
+    }, {
+        iconPath: "../../images/mapicon_navi_e.png",
+      id: 0,
+      latitude: 39.90816,
+      longitude: 116.434446,
+      width: 24,
+      height: 34
+    }],
+
   },
   onLoad: function () {
-    var that = this
-    var city = app.globalData.city //城市
-    console.log(app.globalData.long)
-    console.log(app.globalData.lat)
-    var url = Api.Url.main_shops
-    var params = {
-      city: city,  //默认全部城市
-      long: app.globalData.long,
-      lat: app.globalData.lat,
-    }
-    Api.request(url, params, function (data) {
-      var BMap = new bmap.BMapWX({ ak: '86ebVgiA7ZCqqz5L5QbEBL9BErOE37S2' });
-      for (var i = 0; i < data.shops.length; i++) {
-        wxMarkerData[i] = {
-          address: data.shops[i].province + data.shops[i].address,
-          alpha: 1,
-          height: '',
-          iconPath: "http://dantong.oss-cn-shenzhen.aliyuncs.com/tongdong/marker_red1.png",
-          iconTapPath: "http://dantong.oss-cn-shenzhen.aliyuncs.com/tongdong/marker_red1.png",
-          id: data.shops[i].id,
-          latitude: data.shops[i].latitude,
-          longitude: data.shops[i].longitude,
-          telephone: data.shops[i].telephone,
-          title: data.shops[i].name,
-          width: '',
+    var that = this;
+    var map = new amapFile.AMapWX({ key: 'ef66fe05b5e248164e004e936ddc4804' });
+    map.getDrivingRoute({
+      origin: '116.481028,39.989643',
+      destination: '116.434446,39.90816',
+      success: function (data) {
+        console.error(data)
+        var points = [];
+        if (data.paths && data.paths[0] && data.paths[0].steps) {
+          var steps = data.paths[0].steps;
+          for (var i = 0; i < steps.length; i++) {
+            var poLen = steps[i].polyline.split(';');
+            for (var j = 0; j < poLen.length; j++) {
+              points.push({
+                longitude: parseFloat(poLen[j].split(',')[0]),
+                latitude: parseFloat(poLen[j].split(',')[1])
+              })
+            }
+          }
         }
+        that.setData({
+          polyline: [{
+            points: points,
+            color: "#0091ff",
+            width: 6
+          }]
+        });
+      },
+      fail: function (info) {
+        console.error(info)
       }
-      BMap.search({
-        "query": '学校',
-        success: function () {
-          that.setData({
-            markers: wxMarkerData,
-            latitude: app.globalData.lat,
-            longitude: app.globalData.long,
-          })
-        },
-        iconPath: imgsrc + 'marker_red1.png',
-        iconTapPath: imgsrc + 'marker_red1.png'
-      });
     })
   },
-  makertap: function (e) { //点击标记点时候出发
-    var that = this;
-    var id = e.markerId;
-    that.showSearchInfo(wxMarkerData, id);
-    that.changeMarkerColor(wxMarkerData, id);
-  },
-  showSearchInfo: function (data, i) {
-    var that = this;
-    that.setData({
-      placeData: {
-        title: '名称：' + data[i].title + '\n',
-        address: '地址：' + data[i].address + '\n',
-        telephone: '电话：' + data[i].telephone
-      }
-    });
-  },
-  changeMarkerColor: function (data, id) {
-    var that = this;
-    var markersTemp = [];
-    for (var i = 0; i < data.length; i++) {
-      if (i === id) {
-        // 跳转
-        nation.na('../place/search');
-
-      } else {
-
-      }
-      markersTemp[i] = data[i];
-    }
-    that.setData({
-      markers: markersTemp
-    });
-  },
-
 })

@@ -1,13 +1,14 @@
-var bmap = require('../../../utils/bmap-wx.min.js');
+//var bmap = require('../../../utils/bmap-wx.min.js');
+var amapFile = require('../../../utils/amap-wx.js');
 var nation = require('../../../utils/nation.js');
+var Api = require('../../../utils/api.js');
 var app = getApp(), that;
 var imgsrc = app.imgsrc;
 var wxMarkerData = [];
-var map = null;
 // 百度地图
 Page({
   data: {
-    showDetail:false,
+    showDetail: false,
     school_icon: 'http://dantong.oss-cn-shenzhen.aliyuncs.com/tongdong/bg2.png',
     location_icon: 'http://dantong.oss-cn-shenzhen.aliyuncs.com/tongdong/bg16.png',
     nav_icon: 'http://dantong.oss-cn-shenzhen.aliyuncs.com/tongdong/daohang.png',
@@ -15,78 +16,104 @@ Page({
     latitude: '',
     longitude: '',
     placeData: {},
-    showDetail:false
+    showDetail: false,
+    seleletShopId: '0'
   },
-  makertap: function (e) {
-    var that = this;
-    var id = e.markerId;
-    that.showSearchInfo(wxMarkerData, id);
-    that.changeMarkerColor(wxMarkerData, id);
-  },
+
   onLoad: function () {
     var that = this;
-    var BMap = new bmap.BMapWX({
-      ak: '86ebVgiA7ZCqqz5L5QbEBL9BErOE37S2'
-    });
-    map = BMap;
-  },
-  onShow: function () {
-    var that = this;
-    console.log(map);
-    var fail = function (data) {
-      console.log(data)
-    };
-    var success = function (data) {
-      wxMarkerData = data.wxMarkerData;
+    var map = new amapFile.AMapWX({ key: 'ef66fe05b5e248164e004e936ddc4804' });
+    var city = app.globalData.city //城市
+    var url = Api.Url.main_shops
+    var params = {
+      city: city,  //默认全部城市
+      long: app.globalData.long,
+      lat: app.globalData.lat,
+      openid: app.globalData.openid
+    }
+    Api.request(url, params, function (data) {
+      wxMarkerData = data.shops;
+      for (let index in wxMarkerData) {
+        wxMarkerData[index].iconPath = index == 0 ? '../../images/marker_tap.png' : '../../images/marker.png';
+        wxMarkerData[index].shopId = wxMarkerData[index].id;
+        wxMarkerData[index].id = index;
+        wxMarkerData[index].width = 30;
+        wxMarkerData[index].height = 44;
+      }
+
       that.setData({
         markers: wxMarkerData,
         latitude: wxMarkerData[0].latitude,
         longitude: wxMarkerData[0].longitude,
-        placeData: {
-          title: '名称：' + wxMarkerData[0].title + '\n',
-          address: '地址：' + wxMarkerData[0].address + '\n',
-          telephone: '电话：' + wxMarkerData[0].telephone
-        }        
-      });
-    }
-    map.search({
-      query: '学校',
-      fail: fail,
-      success: success,
-      iconPath: imgsrc + 'marker_red1.png',
-      iconTapPath: imgsrc + 'marker_red1.png'
+        seleletShopId:wxMarkerData[0].shopId
+      })
+      that.showSearchInfo(0);
     });
+    // map.getPoiAround({
+    //   querykeywords: '学校',
+    //   iconPathSelected: '../../images/marker_tap.png',
+    //   iconPath: '../../images/marker.png',
+    //   success: function (data) {
+    //     wxMarkerData = data.markers;
+    //     console.error(data)
+    //     that.setData({
+    //       markers: wxMarkerData,
+    //       latitude: wxMarkerData[0].latitude,
+    //       longitude: wxMarkerData[0].longitude
+    //     });
+    //     that.showSearchInfo(wxMarkerData, 0);
+    //   },
+    //   fail: function (info) {
+    //     wx.showModal({ title: info.errMsg })
+    //   }
+    // })
   },
-
-  showSearchInfo: function (data, i) {
+  makertap: function (e) {
+    var that = this;
+    var id = e.markerId;
+    that.showSearchInfo(id);
+    that.changeMarkerColor(id);
+  },
+  showSearchInfo: function (i) {
     var that = this;
     that.setData({
       showDetail: true,
       placeData: {
-        title: '名称：' + data[i].title + '\n',
-        address: '地址：' + data[i].address + '\n',
-        telephone: '电话：' + data[i].telephone
+        title: '名称：' + wxMarkerData[i].name + '\n',
+        address: '地址：' + wxMarkerData[i].address + '\n',
+        telephone: '电话：' + wxMarkerData[i].telephone
       }
     });
   },
-  changeMarkerColor: function (data, id) {
+  changeMarkerColor: function (id) {
     var that = this;
     var markersTemp = [];
-    for (var i = 0; i < data.length; i++) {
-      if (i === id) {
-        // 跳转
-        //nation.na('../place/search');
-        // data[i].iconPath = imgsrc+"marker_yellow.png";
+    var shopId;
+    for (var i = 0; i < wxMarkerData.length; i++) {
+      if (i == id) {
+        wxMarkerData[i].iconPath = '../../images/marker_tap.png';
+        shopId = wxMarkerData[i].shopId;
       } else {
-        // data[i].iconPath = imgsrc+"marker_red.png";
+        wxMarkerData[i].iconPath = '../../images/marker.png';
       }
-      markersTemp[i] = data[i];
+      markersTemp[i] = wxMarkerData[i];
     }
     that.setData({
+      seleletShopId: shopId,
       markers: markersTemp
     });
   },
   to_seacrchp: function () {
     nation.na('../find/find');
+  },
+  to_dao: function () {
+    nation.na('../navigation/navigation')
+  },
+  to_dea: function (e) {
+    var id = e.currentTarget.id;
+    console.error('id: '+id)
+    if (id) {
+      nation.na('../mendetail/mendetail?id=' + id)
+    }
   }
 })
